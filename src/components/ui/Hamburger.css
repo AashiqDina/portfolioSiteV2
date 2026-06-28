@@ -1,0 +1,45 @@
+.hamburgerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.line1, .line2, .line3{
+    height: 7px;
+    width: 2rem;
+    border-radius: 0 0 0 1rem;
+    animation: ease-in;
+    transition: all 0.5s ease-in-out;
+}
+
+.line1{
+    margin-left: 0;
+}
+
+.line2{
+    margin-left: 5px;
+}
+
+.line3{
+    margin-left: 10px;
+}
+
+.line1.Open{
+    transform: translateY(0.75rem) rotate(45deg);
+    border-radius: 0.15rem;
+}
+
+.line2.Open{
+    opacity: 0;
+}
+
+.line3.Open{
+    transform: translateY(-0.75rem) rotate(-45deg);
+    border-radius: 0.15rem;
+    margin-left: 0;
+}

@@ -1,0 +1,61 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 1rem 1rem 1rem;
+}
+
+.HeaderTitle{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.menu{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all 1s ease-in-out;
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+.menu.open{
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    border-radius: 0 1rem 1rem 0;
+    border-width: 1px 1px 1px 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.menu.close{
+    position: fixed;
+    top: 5rem;
+    left: -10rem;
+    border-radius: 0 5rem 5rem 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.tabText{
+    font-weight: 500;
+}
+
+.tabTextLink{
+    transition: all 0.3s ease-in-out;
+}
+
+.tabTextLink:hover{
+    scale: 1.05;
+    transform: translateX(0.4rem);
+    background: var(--hover-background);
+    background-size: auto;
+    background-clip: border-box;
+    background-size: 200% 100%;
+    animation-name: Shimmer;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

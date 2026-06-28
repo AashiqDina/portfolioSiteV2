@@ -1,0 +1,22 @@
+#root{
+    height: 100%;
+}
+
+.App{
+    height: 100%;
+}
+
+.Content{
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+}

@@ -5,6 +5,7 @@ import { addAlpha, BLACK, MUTED_BLUE, WHITE } from "./colours";
 // Default Colour Scheme
 const defaultMainColour = WHITE
 const defaultSecondaryHoverColour = addAlpha(MUTED_BLUE, 50) 
+const defaultButtonBackgroundColour = addAlpha(BLACK, 50)
 
 export const themes: Record<string, theme> = {
     default: {
@@ -25,6 +26,17 @@ export const themes: Record<string, theme> = {
             fontFamily: "Sansation, sans-serif",
             margin: 0,
             padding: 0,
+        },
+
+        primaryButton:{
+            color: defaultMainColour,
+            fontFamily: "Sansation, sans-serif",
+            borderColor: defaultMainColour,
+            backgroundColor: defaultButtonBackgroundColour
+        },
+
+        secondaryButton: {
+            backgroundColor: undefined
         },
 
         textHoverAnimation: {

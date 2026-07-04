@@ -1,0 +1,66 @@
+.HomeQuickSectionsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.HomeQuickSectionLayoutOne {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 4fr 3fr;
+    height: 5rem;
+    width: 5rem;
+}
+
+.HomeQuickSectionLayoutTwo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3fr 4fr;
+    height: 5rem;
+    width: 5rem;
+}
+
+.HomeQuickSectionBox-child1-type1{
+    width: 100%;
+    padding: 1rem;
+    background-color: black;
+    border: 1px white solid;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.HomeQuickSectionBox-child2-type1{
+    width: 100%;
+    background-color: black;
+    border: 1px white solid;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.HomeQuickSectionBox-child3-type1{
+    width: 100%;
+    background-color: black;
+    border: 1px white solid;
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+.HomeQuickSectionBox-child1-type2{
+    width: 100%;
+    background-color: black;
+    border: 1px white solid;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.HomeQuickSectionBox-child2-type2{
+    width: 100%;
+    background-color: black;
+    border: 1px white solid;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.HomeQuickSectionBox-child3-type2{
+    width: 100%;
+    background-color: black;
+    border: 1px white solid;
+    grid-area: 2 / 2 / 3 / 3;
+}

@@ -1,0 +1,41 @@
+.defaultButtonText{
+    font-size: 2rem;
+}
+
+.defaultButton{
+    position: relative;
+    background-color: #00000034;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+
+}
+
+.defaultButton::before{
+    animation: animatedBorder 2s linear infinite;
+    background: linear-gradient(90deg,#fff 25%,#0000 50%,#fff 75%);
+    background-size: auto;
+    background-size: 200% 200%;
+    border: 1px solid #0000;
+    border-radius: 10rem;
+    box-sizing: border-box;
+    content: "";
+    height: 100%;
+    left: 0;
+    -webkit-mask: linear-gradient(0deg,#fff 100%,#0000 0) content-box,linear-gradient(0deg,#fff 100%,#0000 0) border-box;
+    mask: linear-gradient(0deg,#fff 100%,#0000 0) content-box,linear-gradient(0deg,#fff 100%,#0000 0) border-box;
+    mask-composite: add, add;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: opacity .3s ease-in-out;
+    width: 100%;
+    z-index: 0;
+}
+
+.defaultButton:hover::before{
+    opacity: 1;
+}

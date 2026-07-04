@@ -2,8 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
     height: 100%;
-    width: 100%;
+    width: 100%;    
+}
+
+.HomeMainContent .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 10rem;
 }
 
 .GitHubLinkedInButton{
@@ -14,6 +25,7 @@
     background-color: rgba(0, 0, 0, 0);
     border: none;
     font-size: 2.5rem;
+    font-weight: 400;
     transition: all 0.3s ease-in-out;
 }
 
@@ -41,4 +53,28 @@
     justify-content: center;
     flex-direction: row;
     gap: 5rem;
+}
+
+.ShortAboutMeDescription{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    width: 50%;
+}
+
+.ShortAboutMeDescription p{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+
+.QuickButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 50%;
 }

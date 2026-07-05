@@ -1,5 +1,6 @@
 import { CSSProperties, ReactNode } from "react";
 import "./AppButton.css"
+import { useTheme } from "../../context/ThemeContext";
 
 type props = {
     text: string,
@@ -22,14 +23,16 @@ export default function AppButton({
     style,
     textStyle,
 }: props){
+    const { theme } = useTheme()
+
     return (
         <button 
             className={className || "defaultButton"}
             onClick={onPress}
-            style={style}
+            style={{...theme.primaryButton, ...style}}
             >
                 {leftIcon}
-                <p className={textClassName || "defaultButtonText"} style={textStyle}>{text}</p>
+                <p className={textClassName || "defaultButtonText"} style={{...theme.primaryText, ...textStyle}}>{text}</p>
                 {rightIcon}
         </button>
     )

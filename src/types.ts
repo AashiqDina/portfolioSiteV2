@@ -18,12 +18,37 @@ export type theme = {
         padding: number;
     };
 
+    primaryButton: {
+        color: string,
+        fontFamily: string,
+        borderColor: string,
+        backgroundColor: string,
+    }
+
+    secondaryButton: {
+        backgroundColor: undefined
+    },
+
     textHoverAnimation: {
         background: string;
     }
+
+    card: {
+        // border: string
+    }
 }
+
+// --------- Header --------- 
 
 export type headerTab = {
     title: string,
     link: string,
+}
+
+// --------- Home --------- 
+
+export type homePageData = {
+    title: string,
+    description: string,
+    borderHoverColour: string
 }

@@ -4,63 +4,131 @@
     justify-content: center;
     flex-direction: row;
     gap: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
-.HomeQuickSectionLayoutOne {
+.HomeQuickSectionLayout{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 4fr 3fr;
-    height: 5rem;
-    width: 5rem;
-}
-
-.HomeQuickSectionLayoutTwo {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 3fr 4fr;
-    height: 5rem;
-    width: 5rem;
-}
-
-.HomeQuickSectionBox-child1-type1{
+    gap: 1rem;
     width: 100%;
-    padding: 1rem;
-    background-color: black;
-    border: 1px white solid;
+}
+
+.HomeQuickSectionLayout.One {
+    grid-template-rows: 4fr 3fr;
+}
+
+.HomeQuickSectionLayout.Two {
+    grid-template-rows: 3fr 4fr;
+}
+
+.HomeQuickSectionLayout * {
+    box-sizing: border-box;
+}
+
+.HomeQuickSectionBox{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #00000060;
+}
+
+.HomeQuickSectionBox::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 5px;
+    border-radius: inherit;
+    pointer-events: none;
+
+    background: radial-gradient(
+        18rem circle at var(--mouse-x) var(--mouse-y),
+        var(--hover-colour),
+        transparent 60%
+    );
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.HomeQuickSectionBox::before {
+    opacity: 1;
+}
+
+.HomeQuickSectionBox:hover {
+    transform: scale(1.01);
+}
+.HomeQuickSectionBox.child1.type1{
+    width: 100%;
     grid-area: 1 / 1 / 2 / 2;
 }
 
-.HomeQuickSectionBox-child2-type1{
+.HomeQuickSectionBox.child2.type1{
     width: 100%;
-    background-color: black;
-    border: 1px white solid;
     grid-area: 1 / 2 / 2 / 3;
 }
 
-.HomeQuickSectionBox-child3-type1{
+.HomeQuickSectionBox.child3.type1{
     width: 100%;
-    background-color: black;
-    border: 1px white solid;
     grid-area: 2 / 1 / 3 / 3;
 }
 
-.HomeQuickSectionBox-child1-type2{
+.HomeQuickSectionBox.child1.type2{
     width: 100%;
-    background-color: black;
-    border: 1px white solid;
     grid-area: 1 / 1 / 2 / 3;
 }
 
-.HomeQuickSectionBox-child2-type2{
+.HomeQuickSectionBox.child2.type2{
     width: 100%;
-    background-color: black;
-    border: 1px white solid;
     grid-area: 2 / 1 / 3 / 2;
 }
 
-.HomeQuickSectionBox-child3-type2{
+.HomeQuickSectionBox.child3.type2{
     width: 100%;
-    background-color: black;
-    border: 1px white solid;
     grid-area: 2 / 2 / 3 / 3;
+}
+
+
+.HomeQuickSectionBox h3{
+    font-size: 1.5rem;
+}
+
+.HomeQuickSectionBox h4{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.HomeQuickSectionBox.child1.type2 h3, .HomeQuickSectionBox.child3.type1 h3{
+    font-size: 1.8rem;
+}
+
+.HomeQuickSectionBox.child1.type2 h4, .HomeQuickSectionBox.child3.type1 h4{
+    font-size: 1.2rem;
+}
+
+.purpleStar {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: twinkle 2s infinite;
+    transition: all 0.5s ease-in-out;
 }

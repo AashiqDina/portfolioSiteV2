@@ -1,55 +1,60 @@
-import GitHubIcon from '../assets/githubIcon.svg?react';
-import LinkedInIcon from '../assets/linkedinIcon.svg?react';
-import HomeQuickSection from '../components/home/HomeQuickSection';
-import AppButton from '../components/ui/AppButton';
-import { useTheme } from '../context/ThemeContext';
-import './Home.css';
+import GitHubIcon from "../assets/githubIcon.svg?react";
+import LinkedInIcon from "../assets/linkedinIcon.svg?react";
+import HomeQuickSection from "../components/home/HomeQuickSection";
+import AppButton from "../components/ui/AppButton";
+import { useTheme } from "../context/ThemeContext";
+import "./Home.css";
 
 export default function Home() {
-  const { theme } = useTheme();
+	const { theme } = useTheme();
 
-  const pages = [
-    { name: 'Projects', link: '/' },
-    { name: 'Experience', link: '/' },
-    { name: 'Education', link: '/' },
-    { name: 'Skills', link: '/' },
-    { name: 'Hobbies', link: '/' },
-  ];
+	const pages = [
+		{ name: "Projects", link: "/" },
+		{ name: "Experience", link: "/" },
+		{ name: "Education", link: "/" },
+		{ name: "Skills", link: "/" },
+		{ name: "Hobbies", link: "/" },
+	];
 
-  return (
-    <main className="HomeMainContent">
-      <section className="container">
-        <article className="GitLinkedInSection">
-          <AppButton
-            text="GitHub"
-            onPress={() => (window.location.href = 'https://github.com/AashiqDina')}
-            style={
-              {
-                '--hover-background': theme.textHoverAnimation.background,
-                ...theme.secondaryButton,
-              } as React.CSSProperties
-            }
-            textStyle={theme.primaryText}
-            className="GitHubLinkedInButton"
-            leftIcon={<GitHubIcon style={theme.svgIcons} className="GitHubLinkedInIcon" />}
-          />
-          <AppButton
-            text="LinkedIn"
-            onPress={() =>
-              (window.location.href = 'https://www.linkedin.com/in/aashiq-dina-339842227/')
-            }
-            style={
-              {
-                '--hover-background': theme.textHoverAnimation.background,
-                ...theme.secondaryButton,
-              } as React.CSSProperties
-            }
-            textStyle={theme.primaryText}
-            className="GitHubLinkedInButton"
-            leftIcon={<LinkedInIcon style={theme.svgIcons} className="GitHubLinkedInIcon" />}
-          />
-        </article>
-        <article className="ShortAboutMeDescription">
+	return (
+		<main className="HomeMainContent">
+			<section className="container">
+				<article className="GitLinkedInSection">
+					<AppButton
+						text="GitHub"
+						onPress={() => (window.location.href = "https://github.com/AashiqDina")}
+						style={
+							{
+								"--hover-background": theme.textHoverAnimation.background,
+								...theme.secondaryButton,
+							} as React.CSSProperties
+						}
+						textStyle={theme.primaryText}
+						className="GitHubLinkedInButton"
+						leftIcon={
+							<GitHubIcon style={theme.svgIcons} className="GitHubLinkedInIcon" />
+						}
+					/>
+					<AppButton
+						text="LinkedIn"
+						onPress={() =>
+							(window.location.href =
+								"https://www.linkedin.com/in/aashiq-dina-339842227/")
+						}
+						style={
+							{
+								"--hover-background": theme.textHoverAnimation.background,
+								...theme.secondaryButton,
+							} as React.CSSProperties
+						}
+						textStyle={theme.primaryText}
+						className="GitHubLinkedInButton"
+						leftIcon={
+							<LinkedInIcon style={theme.svgIcons} className="GitHubLinkedInIcon" />
+						}
+					/>
+				</article>
+				{/* <article className="ShortAboutMeDescription">
           <p style={theme.primaryText}>
             Personal portfolio built and designed by me. With a background spanning Graphics, Art,
             Maths, Physics, 3D Design and Computer Science, I bring a mix of creative thinking and
@@ -57,8 +62,8 @@ export default function Home() {
             Engineering Intern at a startup, building real-world systems in a fast-paced
             environment.
           </p>
-        </article>
-        {/* <article className="QuickButtons">
+        </article> */}
+				{/* <article className="QuickButtons">
                     {pages.map((page) => {
                             return (
                                 <AppButton
@@ -69,8 +74,8 @@ export default function Home() {
                         })
                     }
                 </article> */}
-        <HomeQuickSection />
-      </section>
-    </main>
-  );
+				<HomeQuickSection />
+			</section>
+		</main>
+	);
 }

@@ -4,6 +4,10 @@ export function addAlpha(colour: string, alpha: number): string{
     return `${colour}${alpha}` 
 }
 
+// Backgrounds
+export const DEFAULT_TOP = "#04080c"
+export const DEFAULT_BOTTOM = "#050f23"
+
 // Basic Colours
 export const WHITE = "#ffffff"
 export const BLACK = "#000000"

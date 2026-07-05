@@ -32,6 +32,10 @@ export type theme = {
     textHoverAnimation: {
         background: string;
     }
+
+    card: {
+        // border: string
+    }
 }
 
 // --------- Header --------- 
@@ -44,7 +48,7 @@ export type headerTab = {
 // --------- Home --------- 
 
 export type homePageData = {
-    color: string,
     title: string,
     description: string,
+    borderHoverColour: string
 }

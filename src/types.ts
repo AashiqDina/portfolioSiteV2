@@ -45,9 +45,7 @@ export type headerTab = {
     link: string,
 }
 
-// --------- Home --------- 
-
-export type homePageData = {
+export type headerPagesData = {
     title: string,
     description: string,
     borderHoverColour: string

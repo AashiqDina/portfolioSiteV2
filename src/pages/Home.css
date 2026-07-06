@@ -1,11 +1,19 @@
+.HeaderTitle.Home{
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 4rem;
+}
+
 .HomeMainContent{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     height: 100%;
-    width: 100%;    
+    width: 100%;
+    margin-top: 3rem;    
 }
 
 .HomeMainContent .container {
@@ -13,9 +21,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2rem;
-    height: 100%;
-    width: 100%;
+    gap: 1.5em;
     margin-bottom: 5rem;
     margin-left: 5rem;
     margin-right: 5rem;
@@ -56,7 +62,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 5rem;
+    gap: 1.5rem;
+    width: 100%;
+    
 }
 
 .ShortAboutMeDescription{

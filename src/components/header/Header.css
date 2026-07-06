@@ -1,8 +1,26 @@
 header{
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1.5rem 1rem 1rem 1rem;
+    flex-direction: column;
+    padding: 1.5rem 1rem 0rem 1rem;
+    background-color: #00000020;
+    gap: 1.5rem;
+    /* border-bottom: 1px solid rgb(0, 0, 0); */
+    /* backdrop-filter: blur(1px);  */
+}
+
+.HeaderRowOne{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+.headerHome{
+    margin-top: 3rem;
 }
 
 .HeaderTitle{
@@ -10,31 +28,24 @@ header{
     font-weight: 600;
 }
 
-.menu{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-    transition: all 1s ease-in-out;
-    padding: 2rem 2rem 2rem 2rem;
+.quickSection {
+    overflow: hidden;
+
+    max-height: 0;
+    opacity: 0;
+
+    transition:
+        max-height 1s ease,
+        opacity 0.5s ease;
 }
 
-.menu.open{
-    position: fixed;
-    top: 5rem;
-    left: 0;
-    border-radius: 0 1rem 1rem 0;
-    border-width: 1px 1px 1px 0px;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.menu.close{
-    position: fixed;
-    top: 5rem;
-    left: -10rem;
-    border-radius: 0 5rem 5rem 0;
-    background-color: rgba(0, 0, 0, 0);
+.quickSection.open {
+    padding-bottom: 1rem;
+    max-height: 500px;
+    opacity: 1;
+    transition:
+        max-height 1s ease,
+        opacity 0s ease-in-out 0s;
 }
 
 .tabText{
@@ -59,3 +70,4 @@ header{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+

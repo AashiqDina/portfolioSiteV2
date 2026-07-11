@@ -1,38 +1,51 @@
-import { theme } from "../types";
-import { addAlpha, BLACK, MUTED_BLUE, WHITE, DEFAULT_TOP, DEFAULT_BOTTOM } from "./colours";
+import { addAlpha, BLACK, WHITE } from "./colours";
+import { defaultTheme } from "./defaultThemeColourScheme";
+import { typography } from "./typography";
 
 
 // Default Colour Scheme
-const defaultMainColour = WHITE
-const defaultSecondaryHoverColour = addAlpha(MUTED_BLUE, 50) 
-const defaultButtonBackgroundColour = addAlpha(BLACK, 50)
 
-export const themes: Record<string, theme> = {
+const currentTheme = defaultTheme
+
+// NEED TO REPLACE ANY - KEEPING IT FOR NOW AS IM BUILDING 
+export const themes: Record<string, any> = {
     default: {
         background: {
-            background: `linear-gradient(180deg, ${DEFAULT_TOP}, ${DEFAULT_BOTTOM})`,
+            background: `linear-gradient(180deg, ${currentTheme.BackgroundFirstColour}, ${currentTheme.BackgroundSecondColour})`,
+        },
+
+        stars: {
+            backgroundColor: currentTheme.StarsColour,
+        },
+
+        moon: {
+            background: `linear-gradient(135deg, ${currentTheme.BackgroundFirstColour}, ${currentTheme.BackgroundSecondColour})`,
+            boxShadow: `0 0 250px 1px ${addAlpha(currentTheme.MainColour, 33)}`,
+        },
+
+        ...typography,
+
+        header: {
+            // backgroundColor: addAlpha(BLACK, 20),
+        },
+
+        headerNavButtons: {
+            backgroundColor: addAlpha(BLACK, 60),
         },
 
         icons: {
-            backgroundColor: defaultMainColour
+            backgroundColor: currentTheme.MainColour,
         },
 
         svgIcons: {
-            fill: defaultMainColour
-        },
-
-        primaryText: {
-            color: defaultMainColour,
-            fontFamily: "Sansation, sans-serif",
-            margin: 0,
-            padding: 0,
+            fill: currentTheme.MainColour
         },
 
         primaryButton:{
-            color: defaultMainColour,
+            color: currentTheme.MainColour,
             fontFamily: "Sansation, sans-serif",
-            borderColor: defaultMainColour,
-            backgroundColor: defaultButtonBackgroundColour
+            borderColor: currentTheme.MainColour,
+            backgroundColor: currentTheme.ButtonBackgroundColour
         },
 
         secondaryButton: {
@@ -40,11 +53,18 @@ export const themes: Record<string, theme> = {
         },
 
         textHoverAnimation: {
-            background: `linear-gradient(135deg, ${defaultMainColour} 25%, ${defaultSecondaryHoverColour}, ${defaultMainColour} 75%)`
+            background: `linear-gradient(135deg, ${currentTheme.MainColour} 25%, ${currentTheme.SecondaryHoverColour}, ${currentTheme.MainColour} 75%)`
         },
 
         card: {
             // border: `1px solid ${defaultMainColour}`,
         },
+
+        HeaderHoverColor1: {colour: currentTheme.HeaderHoverColor1},
+        HeaderHoverColor2: {colour: currentTheme.HeaderHoverColor2},
+        HeaderHoverColor3: {colour: currentTheme.HeaderHoverColor3},
+        HeaderHoverColor4: {colour: currentTheme.HeaderHoverColor4},
+        HeaderHoverColor5: {colour: currentTheme.HeaderHoverColor5},
+        HeaderHoverColor6: {colour: currentTheme.HeaderHoverColor6},
     },
 };

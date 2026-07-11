@@ -4,11 +4,8 @@ header{
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    padding: 1.5rem 1rem 0rem 1rem;
-    background-color: #00000020;
-    gap: 1.5rem;
-    /* border-bottom: 1px solid rgb(0, 0, 0); */
-    /* backdrop-filter: blur(1px);  */
+    padding: 1rem 1rem 0rem 1rem;
+    z-index: 20;
 }
 
 .HeaderRowOne{
@@ -17,57 +14,33 @@ header{
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
+    padding-bottom: 0.5rem;
 }
+
+.HeaderLogo{
+    width: 4rem;
+    height: 4rem;
+    overflow: visible;
+}
+
 
 .headerHome{
     margin-top: 3rem;
 }
 
-.HeaderTitle{
-    font-size: 2.5rem;
-    font-weight: 600;
-}
 
 .quickSection {
+    position: fixed;
+    top: 5rem;
     overflow: hidden;
-
     max-height: 0;
     opacity: 0;
-
-    transition:
-        max-height 1s ease,
-        opacity 0.5s ease;
+    transition: max-height 1s ease, opacity 1s ease-in-out;
 }
 
 .quickSection.open {
     padding-bottom: 1rem;
     max-height: 500px;
     opacity: 1;
-    transition:
-        max-height 1s ease,
-        opacity 0s ease-in-out 0s;
+    transition: max-height 1s ease, opacity 0s ease-in-out 0s;
 }
-
-.tabText{
-    font-weight: 500;
-}
-
-.tabTextLink{
-    transition: all 0.3s ease-in-out;
-}
-
-.tabTextLink:hover{
-    scale: 1.05;
-    transform: translateX(0.4rem) ;
-    background: var(--hover-background);
-    background-size: auto;
-    background-clip: border-box;
-    background-size: 200% 100%;
-    animation-name: Shimmer;
-    animation-iteration-count: infinite;
-    animation-duration: 4s;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-

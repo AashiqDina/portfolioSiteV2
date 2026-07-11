@@ -1,52 +1,64 @@
-export type theme = {
-    background: {
-        background: string;
-    };
+// export type theme = {
+//     background: {
+//         background: string;
+//     };
 
-    icons: {
-        backgroundColor: string;
-    };
+//     header: {
+//         backgroundColor: string;
+//     }
 
-    svgIcons: {
-        fill: string
-    }
+//     headerNavButtons: {
+//         backgroundColor: string;
+//     }
 
-    primaryText: {
-        color: string;
-        fontFamily: string;
-        margin: number;
-        padding: number;
-    };
+//     icons: {
+//         backgroundColor: string;
+//     };
 
-    primaryButton: {
-        color: string,
-        fontFamily: string,
-        borderColor: string,
-        backgroundColor: string,
-    }
+//     svgIcons: {
+//         fill: string;
+//     }
 
-    secondaryButton: {
-        backgroundColor: undefined
-    },
+//     primaryText: {
+//         color: string;
+//         fontFamily: string;
+//         margin: number;
+//         padding: number;
+//     };
 
-    textHoverAnimation: {
-        background: string;
-    }
+//     primaryButton: {
+//         color: string,
+//         fontFamily: string,
+//         borderColor: string,
+//         backgroundColor: string,
+//     }
 
-    card: {
-        // border: string
-    }
-}
+//     secondaryButton: {
+//         backgroundColor: undefined
+//     },
+
+//     textHoverAnimation: {
+//         background: string;
+//     }
+
+//     card: {
+//         // border: string
+//     },
+
+//     HeaderHoverColor1: { colour: string }
+//     HeaderHoverColor2: { colour: string }
+//     HeaderHoverColor3: { colour: string }
+//     HeaderHoverColor4: { colour: string }
+//     HeaderHoverColor5: { colour: string }
+//     HeaderHoverColor6: { colour: string }
+
+// }
 
 // --------- Header --------- 
-
-export type headerTab = {
-    title: string,
-    link: string,
-}
 
 export type headerPagesData = {
     title: string,
     description: string,
     borderHoverColour: string
+    path: string
 }

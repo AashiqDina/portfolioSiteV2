@@ -5,6 +5,7 @@ import HomeQuickSection from "../components/home/HeaderMenuSection";
 import AppButton from "../components/ui/AppButton";
 import { useTheme } from "../context/ThemeContext";
 import "./Home.css";
+import Moon from "../components/background/Moon";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -27,7 +28,11 @@ export default function Home() {
   return (
     <main className="HomeMainContent">
       <section className="container">
-        {/* <article className="GitLinkedInSection">
+        <Moon />
+        <h1 style={theme.header1}>Aashiq Dina</h1>
+        <p style={theme.paragraph1}>Junior Software Engineer</p>
+
+        <article className="HomeButtons">
           <AppButton
             text="GitHub"
             onPress={() =>
@@ -37,10 +42,9 @@ export default function Home() {
               {
                 "--hover-background": theme.textHoverAnimation.background,
                 ...theme.secondaryButton,
-                ...gitLinkedStyles,
               } as React.CSSProperties
             }
-            textStyle={theme.primaryText}
+            textStyle={theme.text}
             className="GitHubLinkedInButton"
             leftIcon={
               <GitHubIcon
@@ -49,11 +53,6 @@ export default function Home() {
               />
             }
           />
-          <Link to={"/"}>
-            <h1 className="HeaderTitle Home" style={theme.primaryText}>
-              Aashiq Dina
-            </h1>
-          </Link>
           <AppButton
             text="LinkedIn"
             onPress={() =>
@@ -64,10 +63,9 @@ export default function Home() {
               {
                 "--hover-background": theme.textHoverAnimation.background,
                 ...theme.secondaryButton,
-                ...gitLinkedStyles,
               } as React.CSSProperties
             }
-            textStyle={theme.primaryText}
+            textStyle={theme.text}
             className="GitHubLinkedInButton"
             leftIcon={
               <LinkedInIcon
@@ -76,28 +74,7 @@ export default function Home() {
               />
             }
           />
-        </article> */}
-        {/* <article className="ShortAboutMeDescription">
-          <p style={theme.primaryText}>
-            Personal portfolio built and designed by me. With a background spanning Graphics, Art,
-            Maths, Physics, 3D Design and Computer Science, I bring a mix of creative thinking and
-            technical problem-solving to software development. Currently working as a Software
-            Engineering Intern at a startup, building real-world systems in a fast-paced
-            environment.
-          </p>
-        </article> */}
-        {/* <article className="QuickButtons">
-                    {pages.map((page) => {
-                            return (
-                                <AppButton
-                                    text={page.name}
-                                    key={page.name}
-                                />
-                            )
-                        })
-                    }
-                </article> */}
-        {/* <HomeQuickSection /> */}
+        </article>
       </section>
     </main>
   );

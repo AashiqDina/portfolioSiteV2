@@ -3,39 +3,7 @@ import { headerPagesData } from "../../types";
 import "./HeaderMenuSection.css";
 import { useTheme } from "../../context/ThemeContext";
 import { addAlpha } from "../../styles/colours";
-
-const PagesData: headerPagesData[] = [
-  {
-    title: "Education",
-    description: "Academic background, modules and grades overview.",
-    borderHoverColour: "#6a00ac",
-  },
-  {
-    title: "Skills",
-    description: "Technical skills, tools and technologies I work with.",
-    borderHoverColour: "#5500ff",
-  },
-  {
-    title: "Projects",
-    description: "Personal and academic projects I've built.",
-    borderHoverColour: "#6f00ff",
-  },
-  {
-    title: "Experience",
-    description: "Work experience and professional roles to date.",
-    borderHoverColour: "#9000ff",
-  },
-  {
-    title: "Hobbies",
-    description: "Interests and activities outside of development.",
-    borderHoverColour: "#4c00c5",
-  },
-  {
-    title: "Settings",
-    description: "Customize preferences and application settings.",
-    borderHoverColour: "#5500ff",
-  },
-];
+import getPagesData from "../../data/getPagesData";
 
 function formatData(data: headerPagesData[]): headerPagesData[][] {
   const formattedData: headerPagesData[][] = [];
@@ -48,10 +16,12 @@ function formatData(data: headerPagesData[]): headerPagesData[][] {
 }
 
 export default function HeaderMenuSections() {
+  const { theme } = useTheme();
   const [data, setData] = useState<headerPagesData[][]>([]);
 
   useEffect(() => {
-    const formattedData = formatData(PagesData);
+    const pagesData = getPagesData(theme);
+    const formattedData = formatData(pagesData);
     setData(formattedData);
   }, []);
 
@@ -128,11 +98,11 @@ function QuickSectionBox({
   return (
     <div
       className={`HeaderMenuSectionBox child${childIndex + 1} type${type}`}
-      style={theme.card}
+      style={theme.headerNavButtons}
       ref={cardRef}
       onMouseMove={handleMouseMove}
     >
-      <h3 style={theme.primaryText}>{data.title}</h3>
+      <h3 style={theme.text}>{data.title}</h3>
       {purpleStars.map((star, i) => (
         <div
           key={i}
@@ -145,7 +115,7 @@ function QuickSectionBox({
           }}
         />
       ))}
-      <h4 style={theme.primaryText}>{data.description}</h4>
+      <h4 style={theme.text}>{data.description}</h4>
     </div>
   );
 }

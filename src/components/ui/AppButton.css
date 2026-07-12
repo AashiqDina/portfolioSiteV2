@@ -1,13 +1,16 @@
 .defaultButtonText{
     font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
 }
 
 .defaultButton{
     position: relative;
-    background-color: #00000034;
+    background-color: #ffffff34;
     border: none;
-    border-radius: 2rem;
-    padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+    border-radius: 10rem;
+    padding: 1.4rem 1.2rem 1.4rem 1.2rem;
 
 }
 
@@ -16,7 +19,7 @@
     background: linear-gradient(90deg,#fff 25%,#0000 50%,#fff 75%);
     background-size: auto;
     background-size: 200% 200%;
-    border: 1px solid #0000;
+    border: 2px solid #0000;
     border-radius: 10rem;
     box-sizing: border-box;
     content: "";
@@ -38,4 +41,23 @@
 
 .defaultButton:hover::before{
     opacity: 1;
+}
+
+
+@media (max-width: 900px) {
+    .defaultButtonText{
+        font-size: 1.5rem;
+    }
+
+    .defaultButton{
+    }
+}
+
+@media (max-width: 600px) {
+    .defaultButtonText{
+        font-size: 1.4rem;
+    }
+
+    .defaultButton{
+    }
 }

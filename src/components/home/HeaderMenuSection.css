@@ -4,6 +4,8 @@
     justify-content: center;
     flex-direction: row;
     gap: 1.5rem;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 .HeaderMenuSectionLayout{
@@ -45,7 +47,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    padding: 100%;
+    padding: 6px;
     border-radius: inherit;
     pointer-events: none;
 
@@ -64,6 +66,24 @@
 
     opacity: 1;
     transition: opacity 0.25s ease;
+}
+
+.HeaderMenuSectionBox::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    pointer-events: none;
+
+    background: radial-gradient(
+        15rem 8rem ellipse at var(--mouse-x) var(--mouse-y),
+        var(--hover-colour),
+        transparent 70%
+    );
+
+    filter: blur(25px);
+    opacity: 0.5;
+    z-index: 0;
 }
 
 .HeaderMenuSectionBox:hover {
@@ -102,11 +122,13 @@
 
 .HeaderMenuSectionBox h3{
     font-size: 1.5rem;
+    transition: all 0.5s ease-in-out;
 }
 
 .HeaderMenuSectionBox h4{
     font-size: 1rem;
     font-weight: 200;
+    transition: all 0.5s ease-in-out;
 }
 
 .HeaderMenuSectionBox.child1.type2 h3, .HeaderMenuSectionBox.child3.type1 h3{
@@ -125,4 +147,39 @@
     opacity: 0.5;
     animation: twinkle 2s infinite;
     transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 800px) {
+    .HeaderMenuSectionsContainer{
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .HeaderMenuSectionBox{
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .HeaderMenuSectionBox{
+        padding: 1rem;
+    }
+    .HeaderMenuSectionBox h3{
+        font-size: 1.2rem;
+    }
+
+    .HeaderMenuSectionBox h4{
+        font-size: 0.8rem;
+        font-weight: 200;
+    }
+
+    .HeaderMenuSectionBox.child1.type2 h3, .HeaderMenuSectionBox.child3.type1 h3{
+        font-size: 1.6rem;
+    }
+
+    .HeaderMenuSectionBox.child1.type2 h4, .HeaderMenuSectionBox.child3.type1 h4{
+        font-size: 1rem;
+    }
+
 }

@@ -99,3 +99,37 @@
     gap: 1rem;
     width: 50%;
 }
+
+@media (max-width: 900px) {
+    .GitHubLinkedInIcon{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .HomeButtons{
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .HomeMainContent .container {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    .GitHubLinkedInIcon{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .HomeButtons{
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+        column-gap: 0;
+    }
+
+    .ViewMyWork{
+        order: 3;
+    }
+}

@@ -26,7 +26,7 @@ export default function HeaderMenuSections() {
   }, []);
 
   return (
-    <div className="HeaderMenuSectionsContainer">
+    <div className="HeaderMenuSectionsContainer" style={theme.headerModal}>
       {data.map((formattedData, index) => {
         return (
           <div
@@ -35,7 +35,7 @@ export default function HeaderMenuSections() {
                 ? `HeaderMenuSectionLayout One`
                 : `HeaderMenuSectionLayout Two`
             }
-            key={`${index}-${formattedData[index].title}`}
+            key={`${index}-${formattedData[0].title}`}
           >
             {formattedData.map((data, childIndex) => {
               return (

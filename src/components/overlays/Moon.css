@@ -1,0 +1,42 @@
+.backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.OuterMoon{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 20rem;
+    pointer-events: none;
+    z-index: 1;
+    transition: all 1s ease-in-out;
+    margin-bottom: 5rem;
+}
+
+.OuterMoon.open{
+    height: 90%;
+    width: 90%;
+    border-radius: 1rem;
+    z-index: 25;
+    margin-bottom: 10rem;
+}
+
+@media (max-width: 900px) {
+    .OuterMoon{
+        width: 33rem;
+        height: 33rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .OuterMoon{
+        width: 26rem;
+        height: 26rem;
+    }
+}

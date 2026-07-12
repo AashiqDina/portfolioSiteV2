@@ -25,8 +25,8 @@ export const themes: Record<string, any> = {
 
         ...typography,
 
-        header: {
-            // backgroundColor: addAlpha(BLACK, 20),
+        headerModal: {
+            backgroundColor: addAlpha(currentTheme.BackgroundFirstColour, 100),
         },
 
         headerNavButtons: {

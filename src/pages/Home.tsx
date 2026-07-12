@@ -1,36 +1,35 @@
 import { Link } from "react-router-dom";
 import GitHubIcon from "../assets/githubIcon.svg?react";
 import LinkedInIcon from "../assets/linkedinIcon.svg?react";
-import HomeQuickSection from "../components/home/HeaderMenuSection";
 import AppButton from "../components/ui/AppButton";
 import { useTheme } from "../context/ThemeContext";
 import "./Home.css";
-import Moon from "../components/background/Moon";
+import Moon from "../components/overlays/Moon";
+import HomeTitle from "../components/ui/HomeTitle";
+import "../components/ui/PageTitle.css";
+import { useState } from "react";
 
-export default function Home() {
+type props = {
+  closeMenu: () => void;
+};
+
+export default function Home({ closeMenu }: props) {
+  const [viewWorkMenu, setViewWorkMenu] = useState<boolean>(false);
   const { theme } = useTheme();
-
-  // const pages = [
-  // 	{ name: "Projects", link: "/" },
-  // 	{ name: "Experience", link: "/" },
-  // 	{ name: "Education", link: "/" },
-  // 	{ name: "Skills", link: "/" },
-  // 	{ name: "Hobbies", link: "/" },
-  // ];
-
-  const gitLinkedStyles = {
-    backgroundColor: "#00000060",
-    width: "100%",
-    padding: "1rem",
-    borderRadius: "1rem",
-  };
 
   return (
     <main className="HomeMainContent">
+      <Moon
+        menuOpen={viewWorkMenu}
+        closeMenu={() => {
+          setViewWorkMenu(false);
+        }}
+      />
       <section className="container">
-        <Moon />
-        <h1 style={theme.header1}>Aashiq Dina</h1>
-        <p style={theme.paragraph1}>Junior Software Engineer</p>
+        <HomeTitle title={"Aashiq Dina"} />
+        <p style={theme.text} className="paragraph1">
+          Junior Software Engineer
+        </p>
 
         <article className="HomeButtons">
           <AppButton
@@ -53,6 +52,17 @@ export default function Home() {
               />
             }
           />
+
+          <div className="ViewMyWork">
+            <AppButton
+              text={"View My Work"}
+              onPress={() => {
+                closeMenu();
+                setViewWorkMenu(true);
+              }}
+            />
+          </div>
+
           <AppButton
             text="LinkedIn"
             onPress={() =>

@@ -16,6 +16,7 @@ export const themes: Record<string, any> = {
 
         stars: {
             backgroundColor: currentTheme.StarsColour,
+            boxShadow: `0 0 2px 1px ${addAlpha(currentTheme.StarsColour, 50)}`,
         },
 
         moon: {

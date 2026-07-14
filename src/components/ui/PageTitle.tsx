@@ -1,13 +1,24 @@
-// Needs modifications before use
+import { useState, useEffect, ElementType } from "react";
+import { useTheme } from "../../context/ThemeContext";
+import "./PageTitle.css";
 
-import { useState, useEffect } from "react";
-
-type props = {
+type Props = {
   title: string;
+  as?: ElementType;
+  className?: string;
+  delaySpeed?: number;
+  style?: StyleSheet;
 };
 
-export default function PageTitle({ title }: props) {
+export default function PageTitle({
+  title,
+  as: Component = "h2",
+  className = "",
+  style,
+  delaySpeed = 1,
+}: Props) {
   const [animateTitle, setAnimateTitle] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     setAnimateTitle(true);
@@ -15,19 +26,17 @@ export default function PageTitle({ title }: props) {
 
   return (
     <section className="ProjectsTitleSection">
-      <h2 className="PageTitleProjects">
-        {title.split("").map((char, index) => {
-          return (
-            <span
-              key={index}
-              className={`MainProjectLetter ${animateTitle ? "show" : ""}`}
-              style={{ transitionDelay: `${index * 0.1}s` }}
-            >
-              {char}
-            </span>
-          );
-        })}
-      </h2>
+      <Component className={className} style={style ? style : theme.text}>
+        {title.split("").map((char, index) => (
+          <span
+            key={index}
+            className={`character ${animateTitle ? "show" : ""}`}
+            style={{ transitionDelay: `${index * delaySpeed * 0.1}s` }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </span>
+        ))}
+      </Component>
     </section>
   );
 }

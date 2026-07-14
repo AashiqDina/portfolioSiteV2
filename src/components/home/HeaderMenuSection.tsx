@@ -4,6 +4,7 @@ import "./HeaderMenuSection.css";
 import { useTheme } from "../../context/ThemeContext";
 import { addAlpha } from "../../styles/colours";
 import getPagesData from "../../data/getPagesData";
+import Stars from "../background/Stars";
 
 function formatData(data: headerPagesData[]): headerPagesData[][] {
   const formattedData: headerPagesData[][] = [];
@@ -15,7 +16,11 @@ function formatData(data: headerPagesData[]): headerPagesData[][] {
   return formattedData;
 }
 
-export default function HeaderMenuSections() {
+type props = {
+  fillHeight?: boolean;
+};
+
+export default function HeaderMenuSections({ fillHeight = false }: props) {
   const { theme } = useTheme();
   const [data, setData] = useState<headerPagesData[][]>([]);
 
@@ -26,7 +31,13 @@ export default function HeaderMenuSections() {
   }, []);
 
   return (
-    <div className="HeaderMenuSectionsContainer" style={theme.headerModal}>
+    <div
+      className="HeaderMenuSectionsContainer"
+      style={{
+        ...theme.headerModal,
+        ...(fillHeight && { height: "100%", padding: 0 }),
+      }}
+    >
       {data.map((formattedData, index) => {
         return (
           <div
@@ -103,18 +114,7 @@ function QuickSectionBox({
       onMouseMove={handleMouseMove}
     >
       <h3 style={theme.text}>{data.title}</h3>
-      {purpleStars.map((star, i) => (
-        <div
-          key={i}
-          className="purpleStar"
-          style={{
-            top: `${star.top}%`,
-            left: `${star.left}%`,
-            animationDelay: `${star.delay}s`,
-            backgroundColor: `${data.borderHoverColour}`,
-          }}
-        />
-      ))}
+      <Stars count={10} colour={data.borderHoverColour} />
       <h4 style={theme.text}>{data.description}</h4>
     </div>
   );

@@ -1,4 +1,6 @@
 import { useTheme } from "../../context/ThemeContext";
+import HeaderMenuSection from "../home/HeaderMenuSection";
+import Seperator from "../ui/Seperator";
 import "./Moon.css";
 
 type props = {
@@ -12,10 +14,15 @@ export default function Moon({ menuOpen, closeMenu }: props) {
   return (
     <>
       {menuOpen && <div className="backdrop" onClick={closeMenu}></div>}
-      <div
-        style={theme.moon}
-        className={`OuterMoon ${menuOpen ? "open" : ""}`}
-      ></div>
+      <div style={theme.moon} className={`OuterMoon ${menuOpen ? "open" : ""}`}>
+        {menuOpen && (
+          <div>
+            <div className="moonHeader"></div>
+            <Seperator colour={"#FFFFFF"} />
+            <HeaderMenuSection fillHeight={true} />
+          </div>
+        )}
+      </div>
     </>
   );
 }

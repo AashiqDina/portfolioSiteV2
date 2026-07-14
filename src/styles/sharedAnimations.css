@@ -15,3 +15,22 @@
         background-position: 200% 50%;
     }
 }
+
+@keyframes backdropOpen {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100%{
+    background: rgba(0, 0, 0, 0.8);
+    /* backdrop-filter: blur(2px); */
+  }
+}
+
+@keyframes opacityToOne {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

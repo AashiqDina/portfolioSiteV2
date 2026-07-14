@@ -5,9 +5,9 @@ import AppButton from "../components/ui/AppButton";
 import { useTheme } from "../context/ThemeContext";
 import "./Home.css";
 import Moon from "../components/overlays/Moon";
-import HomeTitle from "../components/ui/HomeTitle";
 import "../components/ui/PageTitle.css";
 import { useState } from "react";
+import PageTitle from "../components/ui/PageTitle";
 
 type props = {
   closeMenu: () => void;
@@ -26,10 +26,13 @@ export default function Home({ closeMenu }: props) {
         }}
       />
       <section className="container">
-        <HomeTitle title={"Aashiq Dina"} />
-        <p style={theme.text} className="paragraph1">
-          Junior Software Engineer
-        </p>
+        <PageTitle title={"Aashiq Dina"} as={"h1"} className="header1" />
+        <PageTitle
+          title={"Junior Software Engineer"}
+          as={"p"}
+          className="paragraph1"
+          delaySpeed={0.5}
+        />
 
         <article className="HomeButtons">
           <AppButton

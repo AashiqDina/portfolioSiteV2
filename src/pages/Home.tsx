@@ -47,7 +47,7 @@ export default function Home({ closeMenu }: props) {
               } as React.CSSProperties
             }
             textStyle={theme.text}
-            className="GitHubLinkedInButton"
+            className="buttonVariant2"
             leftIcon={
               <GitHubIcon
                 style={theme.svgIcons}
@@ -79,7 +79,7 @@ export default function Home({ closeMenu }: props) {
               } as React.CSSProperties
             }
             textStyle={theme.text}
-            className="GitHubLinkedInButton"
+            className="buttonVariant2"
             leftIcon={
               <LinkedInIcon
                 style={theme.svgIcons}

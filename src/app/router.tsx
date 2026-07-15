@@ -3,6 +3,12 @@ import Header from "../components/header/Header";
 import StarryBackground from "../components/background/StarryBackground";
 import Home from "../pages/Home";
 import { useState } from "react";
+import Experience from "../pages/Experience";
+import Projects from "../pages/Projects";
+import Education from "../pages/Education";
+import Skills from "../pages/Skills";
+import Hobbies from "../pages/Hobbies";
+import Settings from "../pages/Settings";
 
 export default function Router() {
   // const hideHeader = location.pathname === "/";
@@ -16,6 +22,7 @@ export default function Router() {
           <Header
             isMenuOpen={menuOpen}
             toggleMenu={() => setMenuOpen((prev) => !prev)}
+            closeMenu={() => setMenuOpen(false)}
           />
           <Routes>
             <Route
@@ -28,6 +35,12 @@ export default function Router() {
                 />
               }
             />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/hobbies" element={<Hobbies />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
       </div>

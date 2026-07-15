@@ -9,9 +9,10 @@ import AashiqDinaLogo from "../../assets/Aashiq-Dina-Logo.svg?react";
 type props = {
   isMenuOpen: boolean;
   toggleMenu: () => void;
+  closeMenu: () => void;
 };
 
-export default function Header({ isMenuOpen, toggleMenu }: props) {
+export default function Header({ isMenuOpen, toggleMenu, closeMenu }: props) {
   const { theme } = useTheme();
 
   return (
@@ -24,11 +25,15 @@ export default function Header({ isMenuOpen, toggleMenu }: props) {
         />
 
         <Link to={"/"}>
-          <AashiqDinaLogo style={theme.svgIcons} className="HeaderLogo" />
+          <AashiqDinaLogo
+            style={theme.svgIcons}
+            className="HeaderLogo"
+            onClick={closeMenu}
+          />
         </Link>
       </div>
       <div className={`quickSection ${isMenuOpen ? "open" : ""}`}>
-        <HeaderMenuSections />
+        <HeaderMenuSections closeMenu={closeMenu} />
       </div>
     </header>
   );

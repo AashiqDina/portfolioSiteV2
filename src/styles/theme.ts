@@ -67,5 +67,6 @@ export const themes: Record<string, any> = {
         HeaderHoverColor4: {colour: currentTheme.HeaderHoverColor4},
         HeaderHoverColor5: {colour: currentTheme.HeaderHoverColor5},
         HeaderHoverColor6: {colour: currentTheme.HeaderHoverColor6},
+        HeaderHoverColor7: {colour: currentTheme.HeaderHoverColor7},
     },
 };

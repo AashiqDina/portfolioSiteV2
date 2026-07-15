@@ -5,6 +5,7 @@ import { useTheme } from "../../context/ThemeContext";
 import { addAlpha } from "../../styles/colours";
 import getPagesData from "../../data/getPagesData";
 import Stars from "../background/Stars";
+import { Link } from "react-router-dom";
 
 function formatData(data: headerPagesData[]): headerPagesData[][] {
   const formattedData: headerPagesData[][] = [];
@@ -18,9 +19,13 @@ function formatData(data: headerPagesData[]): headerPagesData[][] {
 
 type props = {
   fillHeight?: boolean;
+  closeMenu?: () => void;
 };
 
-export default function HeaderMenuSections({ fillHeight = false }: props) {
+export default function HeaderMenuSections({
+  fillHeight = false,
+  closeMenu,
+}: props) {
   const { theme } = useTheme();
   const [data, setData] = useState<headerPagesData[][]>([]);
 
@@ -34,7 +39,7 @@ export default function HeaderMenuSections({ fillHeight = false }: props) {
     <div
       className="HeaderMenuSectionsContainer"
       style={{
-        ...theme.headerModal,
+        ...(!fillHeight && theme.headerModal),
         ...(fillHeight && { height: "100%", padding: 0 }),
       }}
     >
@@ -55,6 +60,7 @@ export default function HeaderMenuSections({ fillHeight = false }: props) {
                   parentIndex={index}
                   childIndex={childIndex}
                   key={`${data.title}-${childIndex}`}
+                  closeMenu={closeMenu ?? undefined}
                 />
               );
             })}
@@ -69,26 +75,20 @@ type QuickSectionBoxProps = {
   data: headerPagesData;
   parentIndex: number;
   childIndex: number;
+  center?: true;
+  closeMenu?: () => void;
 };
 
-function QuickSectionBox({
+export function QuickSectionBox({
   data,
   parentIndex,
   childIndex,
+  center,
+  closeMenu,
 }: QuickSectionBoxProps) {
   const { theme } = useTheme();
   const type = parentIndex % 2 === 0 ? 1 : 2;
   const cardRef = useRef<HTMLDivElement>(null);
-
-  const purpleStars = useMemo(
-    () =>
-      Array.from({ length: 10 }).map(() => ({
-        top: Math.random() * 100,
-        left: Math.random() * 100,
-        delay: Math.random() * 3,
-      })),
-    [],
-  );
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     if (!cardRef.current) return;
@@ -109,13 +109,27 @@ function QuickSectionBox({
   return (
     <div
       className={`HeaderMenuSectionBox child${childIndex + 1} type${type}`}
-      style={theme.headerNavButtons}
+      style={{
+        ...theme.headerNavButtons,
+      }}
       ref={cardRef}
       onMouseMove={handleMouseMove}
+      onClick={closeMenu ?? undefined}
     >
-      <h3 style={theme.text}>{data.title}</h3>
-      <Stars count={10} colour={data.borderHoverColour} />
-      <h4 style={theme.text}>{data.description}</h4>
+      <Link to={data.path} className="HeaderMenuBoxContainer">
+        <h3
+          style={{
+            ...theme.text,
+            ...(center ? { textAlign: "center", width: "100%" } : undefined),
+          }}
+        >
+          {data.title}
+        </h3>
+        <Stars count={10} colour={data.borderHoverColour} />
+        {data.description ? (
+          <h4 style={theme.text}>{data.description}</h4>
+        ) : undefined}
+      </Link>
     </div>
   );
 }

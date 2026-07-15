@@ -35,30 +35,7 @@
 
 
 
-.GitHubLinkedInButton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    font-size: 2.5rem;
-    font-weight: 400;
-    transition: all 0.3s ease-in-out;
-}
 
-.GitHubLinkedInButton:hover, .GitHubLinkedInIcon:hover{
-    background: var(--hover-background);
-    background-size: auto;
-    background-clip: border-box;
-    background-size: 200% 100%;
-    animation-name: Shimmer;
-    animation-iteration-count: infinite;
-    animation-duration: 4s;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 .GitHubLinkedInIcon{
     width: 3rem;

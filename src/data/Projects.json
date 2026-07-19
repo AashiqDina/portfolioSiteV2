@@ -1,0 +1,32 @@
+[
+    {
+        "id": "TradeSim-1",
+        "name": "TradeSim",
+        "summary": "A full-stack trading simulation platform that allows users to simulate stock trading, track portfolios and analyse market data through an interactive dashboard.",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "C#",
+            ".NET",
+            "ASP.NET Core",
+            "Supabase",
+            "Chart.js",
+            "Jest",
+            "React Testing Library",
+            "Axios",
+            "BCrypt",
+            "JWT"
+        ],
+        "links": {
+            "github": "https://github.com/AashiqDina/trading-sim",
+            "liveDemo": "https://aashiqdina.github.io/trading-sim/#/"
+        },
+        "images": {
+            "logo": "/public/projects/tradingSim/Logo.svg",
+            "thumbnail": "/public/projects/tradingSim/Thumbnail.png"
+        },
+        "descriptions": [
+            "Built a full-stack trading simulation platform with a React and Chart.js dashboard, implementing time-series portfolio tracking with memoised computations and dynamic filtering to support efficient rendering of large datasets."
+        ]
+    }
+]

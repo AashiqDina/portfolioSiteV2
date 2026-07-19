@@ -8,6 +8,7 @@ type Props = {
   className?: string;
   delaySpeed?: number;
   style?: StyleSheet;
+  addShadow?: boolean;
 };
 
 export default function PageTitle({
@@ -16,6 +17,7 @@ export default function PageTitle({
   className = "",
   style,
   delaySpeed = 1,
+  addShadow = false,
 }: Props) {
   const [animateTitle, setAnimateTitle] = useState(false);
   const { theme } = useTheme();
@@ -31,7 +33,12 @@ export default function PageTitle({
           <span
             key={index}
             className={`character ${animateTitle ? "show" : ""}`}
-            style={{ transitionDelay: `${index * delaySpeed * 0.1}s` }}
+            style={{
+              transitionDelay: `${index * delaySpeed * 0.1}s`,
+              ...(addShadow
+                ? { textShadow: `0rem 0rem 0.25rem ${theme.text.color}` }
+                : undefined),
+            }}
           >
             {char === " " ? "\u00A0" : char}
           </span>

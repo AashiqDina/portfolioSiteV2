@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { headerPagesData } from "../../types";
+import { HeaderPagesData } from "../../types";
 import "./HeaderMenuSection.css";
 import { useTheme } from "../../context/ThemeContext";
 import { addAlpha } from "../../styles/colours";
@@ -7,8 +7,8 @@ import getPagesData from "../../data/getPagesData";
 import Stars from "../background/Stars";
 import { Link } from "react-router-dom";
 
-function formatData(data: headerPagesData[]): headerPagesData[][] {
-  const formattedData: headerPagesData[][] = [];
+function formatData(data: HeaderPagesData[]): HeaderPagesData[][] {
+  const formattedData: HeaderPagesData[][] = [];
 
   for (let i = 0; i < data.length; i += 3) {
     formattedData.push(data.slice(i, i + 3));
@@ -27,7 +27,7 @@ export default function HeaderMenuSections({
   closeMenu,
 }: props) {
   const { theme } = useTheme();
-  const [data, setData] = useState<headerPagesData[][]>([]);
+  const [data, setData] = useState<HeaderPagesData[][]>([]);
 
   useEffect(() => {
     const pagesData = getPagesData(theme);
@@ -72,7 +72,7 @@ export default function HeaderMenuSections({
 }
 
 type QuickSectionBoxProps = {
-  data: headerPagesData;
+  data: HeaderPagesData;
   parentIndex: number;
   childIndex: number;
   center?: true;

@@ -126,22 +126,22 @@
 }
 
 
-.HeaderMenuSectionBox h3{
+.HeaderMenuSectionBox a h3{
     font-size: 1.5rem;
     transition: all 0.5s ease-in-out;
 }
 
-.HeaderMenuSectionBox h4{
+.HeaderMenuSectionBox a h4{
     font-size: 1rem;
     font-weight: 200;
     transition: all 0.5s ease-in-out;
 }
 
-.HeaderMenuSectionBox.child1.type2 h3, .HeaderMenuSectionBox.child3.type1 h3{
+.HeaderMenuSectionBox.child1.type2 a h3, .HeaderMenuSectionBox.child3.type1 a h3{
     font-size: 1.8rem;
 }
 
-.HeaderMenuSectionBox.child1.type2 h4, .HeaderMenuSectionBox.child3.type1 h4{
+.HeaderMenuSectionBox.child1.type2 a h4, .HeaderMenuSectionBox.child3.type1 a h4{
     font-size: 1.2rem;
 }
 
@@ -152,7 +152,7 @@
         flex-direction: column;
     }
 
-    .HeaderMenuSectionBox{
+    .HeaderMenuSectionBox a{
         gap: 0.5rem;
     }
 }
@@ -160,23 +160,49 @@
 @media (max-width: 600px) {
 
     .HeaderMenuSectionBox{
-        padding: 1rem;
+        padding: 0rem;
+        gap: 0;
     }
-    .HeaderMenuSectionBox h3{
+
+    .HeaderMenuSectionBox a{
+        gap: 0rem;
+    }
+
+    .HeaderMenuSectionBox a h3{
         font-size: 1.2rem;
     }
 
-    .HeaderMenuSectionBox h4{
+    .HeaderMenuSectionBox a h4{
         font-size: 0.8rem;
         font-weight: 200;
     }
 
-    .HeaderMenuSectionBox.child1.type2 h3, .HeaderMenuSectionBox.child3.type1 h3{
+    .HeaderMenuSectionBox.child1.type2 a h3, .HeaderMenuSectionBox.child3.type1 a h3{
         font-size: 1.6rem;
     }
 
-    .HeaderMenuSectionBox.child1.type2 h4, .HeaderMenuSectionBox.child3.type1 h4{
+    .HeaderMenuSectionBox.child1.type2 a h4, .HeaderMenuSectionBox.child3.type1 a h4{
         font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .HeaderMenuSectionBox a h3{
+        font-size: 1rem;
+    }
+
+    .HeaderMenuSectionBox a h4{
+        font-size: 0.7rem;
+    }
+
+    .HeaderMenuSectionBox.child1.type2 a h3, .HeaderMenuSectionBox.child3.type1 a h3{
+        font-size: 1.2rem;
+    }
+
+    .HeaderMenuSectionBox.child1.type2 a h4, .HeaderMenuSectionBox.child3.type1 a h4{
+        font-size: 0.8rem;
     }
 
 }

@@ -1,4 +1,4 @@
-// export type theme = {
+// export type Theme = {
 //     background: {
 //         background: string;
 //     };
@@ -27,15 +27,15 @@
 //     };
 
 //     primaryButton: {
-//         color: string,
-//         fontFamily: string,
-//         borderColor: string,
-//         backgroundColor: string,
+//         color: string;
+//         fontFamily: string;
+//         borderColor: string;
+//         backgroundColor: string;
 //     }
 
 //     secondaryButton: {
 //         backgroundColor: undefined
-//     },
+//     };
 
 //     textHoverAnimation: {
 //         background: string;
@@ -43,7 +43,7 @@
 
 //     card: {
 //         // border: string
-//     },
+//     };
 
 //     HeaderHoverColor1: { colour: string }
 //     HeaderHoverColor2: { colour: string }
@@ -56,9 +56,28 @@
 
 // --------- Header --------- 
 
-export type headerPagesData = {
-    title: string,
-    description: string,
-    borderHoverColour: string
-    path: string
+export type HeaderPagesData = {
+    title: string;
+    description: string;
+    borderHoverColour: string;
+    path: string;
 }
+
+// --------- Projects --------- 
+
+export type ProjectData = {
+    id: string;
+    name: string;
+    summary: string;
+    technologies: string[];
+    links: {
+        github?: string;
+        liveDemo?: string;
+    };
+    images: {
+        logo?: string; 
+        thumbnail: string;
+        additional?: string[];
+    };
+    descriptions: string[];
+}   

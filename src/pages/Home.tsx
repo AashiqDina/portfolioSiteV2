@@ -26,12 +26,18 @@ export default function Home({ closeMenu }: props) {
         }}
       />
       <section className="container">
-        <PageTitle title={"Aashiq Dina"} as={"h1"} className="header1" />
+        <PageTitle
+          title={"Aashiq Dina"}
+          as={"h1"}
+          className="header1"
+          addShadow={true}
+        />
         <PageTitle
           title={"Junior Software Engineer"}
           as={"p"}
           className="paragraph1"
           delaySpeed={0.5}
+          addShadow={true}
         />
 
         <article className="HomeButtons">

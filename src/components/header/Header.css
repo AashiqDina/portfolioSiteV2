@@ -35,7 +35,7 @@ header{
     overflow: hidden;
     max-height: 0;
     opacity: 0;
-    transition: max-height 1s ease, opacity 1s ease-in-out;
+    transition: max-height 0.5s ease, opacity 1s ease-in-out;
     margin: 1rem 0.5rem 0 0.5rem;
 }
 

@@ -42,15 +42,6 @@ export default function ProjectCard({ data }: Props) {
     projCard.style.transform = "scale(1) rotateX(0) rotateY(0)";
   }
 
-  //  ------------------------------------------------
-
-  const customLinkStyle = {
-    transform: `translateZ(20px)`,
-    flex: 1,
-  };
-
-  //  ------------------------------------------------
-
   return (
     <div
       onMouseMove={handleMouseMove}
@@ -70,9 +61,19 @@ export default function ProjectCard({ data }: Props) {
         </div>
         <div className="project-card-footer">
           {data.links.liveDemo && (
-            <AppLink style={customLinkStyle}>Live Demo</AppLink>
+            <AppButton
+              className="project-card-footer-buttons"
+              textClassName="project-card-footer-buttons-text"
+            >
+              Live Demo
+            </AppButton>
           )}
-          <AppLink style={customLinkStyle}>Details</AppLink>
+          <AppButton
+            className="project-card-footer-buttons"
+            textClassName="project-card-footer-buttons-text"
+          >
+            Details
+          </AppButton>
         </div>
       </div>
     </div>

@@ -21,7 +21,6 @@ export default function AppButton({
   className,
   textClassName,
   style,
-  textStyle,
 }: Props) {
   const { theme } = useTheme();
 
@@ -32,12 +31,7 @@ export default function AppButton({
       style={{ ...theme.primaryButton, ...style }}
     >
       {leftIcon}
-      <p
-        className={textClassName || "defaultButtonText"}
-        style={{ ...theme.primaryText, ...textStyle }}
-      >
-        {children}
-      </p>
+      <p className={textClassName || "defaultButtonText"}>{children}</p>
       {rightIcon}
     </button>
   );

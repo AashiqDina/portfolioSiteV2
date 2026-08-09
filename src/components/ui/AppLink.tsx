@@ -11,7 +11,14 @@ export default function AppLink({ children, style }: Props) {
   const { theme } = useTheme();
 
   return (
-    <button className="AppLink" style={{ ...theme.text, ...style }}>
+    <button
+      className="AppLink"
+      style={{
+        "--hover-background": theme.textHoverAnimation.background,
+        ...theme.text,
+        ...style,
+      }}
+    >
       {children}
     </button>
   );

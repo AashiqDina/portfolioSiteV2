@@ -22,8 +22,8 @@
             "liveDemo": "https://aashiqdina.github.io/trading-sim/#/"
         },
         "images": {
-            "logo": "/public/projects/tradingSim/Logo.svg",
-            "thumbnail": "/public/projects/tradingSim/Thumbnail.png"
+            "logo": "/projects/tradingSim/Logo.svg",
+            "thumbnail": "/projects/tradingSim/Thumbnail.png"
         },
         "descriptions": [
             "Built a full-stack trading simulation platform with a React and Chart.js dashboard, implementing time-series portfolio tracking with memoised computations and dynamic filtering to support efficient rendering of large datasets."

@@ -1,5 +1,23 @@
-.AppLink{
+.AppLink {
+    position: relative;
     background: none;
     border: none;
     white-space: nowrap;
+    font-size: 1rem;
+    z-index: 0;
+}
+
+.AppLink::before {
+    z-index: -1;
+}
+
+.AppLink:hover {
+    background: var(--hover-background);
+    background-size: 200% 100%;
+    animation-name: Shimmer;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

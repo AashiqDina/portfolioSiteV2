@@ -42,7 +42,6 @@ export default function Home({ closeMenu }: props) {
 
         <article className="HomeButtons">
           <AppButton
-            text="GitHub"
             onPress={() =>
               (window.location.href = "https://github.com/AashiqDina")
             }
@@ -60,20 +59,22 @@ export default function Home({ closeMenu }: props) {
                 className="GitHubLinkedInIcon"
               />
             }
-          />
+          >
+            GitHub
+          </AppButton>
 
           <div className="ViewMyWork">
             <AppButton
-              text={"View My Work"}
               onPress={() => {
                 closeMenu();
                 setViewWorkMenu(true);
               }}
-            />
+            >
+              View My Work
+            </AppButton>
           </div>
 
           <AppButton
-            text="LinkedIn"
             onPress={() =>
               (window.location.href =
                 "https://www.linkedin.com/in/aashiq-dina-339842227/")
@@ -92,7 +93,9 @@ export default function Home({ closeMenu }: props) {
                 className="GitHubLinkedInIcon"
               />
             }
-          />
+          >
+            LinkedIn
+          </AppButton>
         </article>
       </section>
     </main>

@@ -58,7 +58,11 @@ export const themes: Record<string, any> = {
         },
 
         card: {
-            // border: `1px solid ${defaultMainColour}`,
+            backgroundColor: addAlpha(BLACK, 50),
+            // background: `linear-gradient(120deg, ${currentTheme.BackgroundFirstColour}, ${currentTheme.BackgroundSecondColour})`,
+            // boxShadow: `0px 5px 20px 0px ${addAlpha(BLACK, 60)}`,
+            // backdropFilter: `blur(3px)`
+
         },
 
         HeaderHoverColor1: {colour: currentTheme.HeaderHoverColor1},

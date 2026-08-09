@@ -7,6 +7,7 @@ export const defaultTheme = {
     BackgroundFirstColour: DEFAULT_TOP,
     BackgroundSecondColour: DEFAULT_BOTTOM,
     StarsColour: WHITE,
+    CardBackground: BLACK,
     
     HeaderHoverColor1: HOVER_PUPRLE_VARIANT_1,
     HeaderHoverColor2: HOVER_PUPRLE_VARIANT_2,

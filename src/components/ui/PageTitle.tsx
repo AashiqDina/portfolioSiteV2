@@ -36,7 +36,7 @@ export default function PageTitle({
             style={{
               transitionDelay: `${index * delaySpeed * 0.1}s`,
               ...(addShadow
-                ? { textShadow: `0rem 0rem 0.25rem ${theme.text.color}` }
+                ? { textShadow: `0rem 0rem 0.1rem ${theme.text.color}` }
                 : undefined),
             }}
           >

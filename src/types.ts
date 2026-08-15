@@ -67,6 +67,7 @@ export type HeaderPagesData = {
 
 export type ProjectData = {
     id: string;
+    impact: number;
     name: string;
     summary: string;
     technologies: string[];

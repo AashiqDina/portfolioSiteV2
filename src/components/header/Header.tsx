@@ -16,7 +16,7 @@ export default function Header({ isMenuOpen, toggleMenu, closeMenu }: props) {
   const { theme } = useTheme();
 
   return (
-    <header style={theme.header}>
+    <header>
       <div className="HeaderRowOne">
         <Hamburger
           theme={theme}

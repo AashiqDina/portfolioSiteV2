@@ -65,6 +65,14 @@ export const themes: Record<string, any> = {
 
         },
 
+        pill: {
+            borderWidth: "1px",
+            borderColor: currentTheme.MainColour,
+            borderStyle: "solid",
+            borderRadius: "10rem",
+            padding: "0.5rem 1rem 0.5rem 1rem"
+        },
+
         HeaderHoverColor1: {colour: currentTheme.HeaderHoverColor1},
         HeaderHoverColor2: {colour: currentTheme.HeaderHoverColor2},
         HeaderHoverColor3: {colour: currentTheme.HeaderHoverColor3},

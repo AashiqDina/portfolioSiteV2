@@ -1,6 +1,7 @@
 [
     {
         "id": "TradeSim-1",
+        "impact": 80,
         "name": "TradeSim",
         "summary": "A full-stack trading simulation platform that allows users to simulate stock trading, track portfolios and analyse market data through an interactive dashboard.",
         "technologies": [
@@ -28,5 +29,51 @@
         "descriptions": [
             "Built a full-stack trading simulation platform with a React and Chart.js dashboard, implementing time-series portfolio tracking with memoised computations and dynamic filtering to support efficient rendering of large datasets."
         ]
-    }
+    },
+    {
+        "id": "ImageClassifier-1",
+        "impact": 50,
+        "name": "Image Classifier",
+        "summary": "A custom convolutional neural network built with Python and PyTorch to classify images from the CIFAR-10 dataset, achieving 92.8% training accuracy and 88.5% test accuracy.",
+        "technologies": [
+            "Python",
+            "PyTorch",
+            "Torchvision",
+            "CIFAR-10",
+            "CUDA"
+        ],
+        "links": {
+            "github": "https://github.com/AashiqDina/Neural_Networks_Project"
+        },
+        "images": {
+            "thumbnail": "/projects/imageClassifier/Thumbnail.png"
+        },
+        "descriptions": [
+            "Designed and implemented a modular convolutional neural network using parallel convolutional paths with learned feature weighting, batch normalisation, dropout and adaptive pooling, achieving 92.8% training accuracy and 88.5% test accuracy.",
+            "Implemented data augmentation using random flips, colour jitter, rotation and cropping, alongside AdamW optimisation and learning-rate scheduling to improve model generalisation."
+        ]
+    },
+    {
+    "id": "Tenzies-1",
+    "impact": 10,
+    "name": "Tenzies Game",
+    "summary": "A responsive Tenzies dice game built with React and JavaScript, featuring dice selection, hold mechanics, win detection, keyboard accessibility and animated victory feedback.",
+    "technologies": [
+        "JavaScript",
+        "React",
+        "HTML5",
+        "CSS3"
+    ],
+    "links": {
+        "github": "https://github.com/AashiqDina/Tenzies"
+    },
+    "images": {
+        "thumbnail": "/projects/tenzies/Thumbnail.png"
+    },
+    "descriptions": [
+        "Built an interactive dice game where players can selectively hold dice between rolls, with game-state logic determining valid holds and detecting when all dice match.",
+        "Implemented keyboard accessibility using tab navigation and Enter interactions, responsive styling for different screen sizes, and visual feedback for held dice and completed games.",
+        "Added a confetti animation and replay functionality when the player wins, providing immediate visual feedback and allowing the game to be restarted without refreshing the page."
+    ]
+}
 ]

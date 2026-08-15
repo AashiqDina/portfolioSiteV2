@@ -44,16 +44,15 @@
     pointer-events: none;
     z-index: 1;
     transition: all 1s ease-in-out;
-    margin-bottom: 5rem;
     padding: 1.5rem;
 }
 
 .OuterMoon.open{
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
     border-radius: 1rem;
     z-index: 25;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     pointer-events: auto;
     overflow: scroll;
 }

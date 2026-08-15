@@ -3,7 +3,7 @@ import "./AppButton.css";
 import { useTheme } from "../../context/ThemeContext";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   onPress?: () => void;

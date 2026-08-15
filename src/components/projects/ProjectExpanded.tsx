@@ -14,6 +14,12 @@ export default function projectExpanded({ projectData, closeCard }: Props) {
 
   const technologies = projectData?.technologies ?? [];
 
+  const MIN_REPEATS = technologies.length <= 5 ? 8 : 2;
+  const repeatedTechnologies = Array.from(
+    { length: MIN_REPEATS },
+    () => technologies,
+  ).flat();
+
   return (
     <>
       {projectData && <div className="project-backdrop" onClick={closeCard} />}
@@ -39,7 +45,7 @@ export default function projectExpanded({ projectData, closeCard }: Props) {
         </div>
         <div className="expanded-card-carousel-container">
           <div className="expanded-card-tech-container">
-            {[...technologies, ...technologies].map((tech, index) => (
+            {repeatedTechnologies.map((tech, index) => (
               <span
                 key={`${tech}-${index}`}
                 style={{ ...theme.text, ...theme.pill }}

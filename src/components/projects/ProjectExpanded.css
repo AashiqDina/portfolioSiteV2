@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 1rem;
     flex-direction: column;
     transition: top 1s ease-in-out;
     transition-delay: 0s;
@@ -62,22 +63,31 @@
     font-size: 3rem;
 }
 
-.expanded-card-carousel-container{
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-}
-
-.expanded-card-tech-container{
+.expanded-card-footer{
     display: flex;
     justify-content: center;
-    width: max-content;
-    gap: 1.5rem;
-    animation: scrollLeft 30s linear infinite;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
 }
 
-.expanded-card-carousel-rider{
+.expanded-card-footer div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
+}
+
+.expanded-card-footer > .expanded-card-footer-links {
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.expanded-card-footer div img{
+    width: 3rem;
+}
+
+.expanded-card-footer div a{
     font-size: 1.5rem;
-    font-weight: 200;
-    letter-spacing: 2px;
 }

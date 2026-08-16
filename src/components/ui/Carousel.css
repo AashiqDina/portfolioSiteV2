@@ -1,0 +1,20 @@
+.carousel-container{
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-card-container{
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    gap: 1.5rem;
+    animation: scrollLeft 30s linear infinite;
+}
+
+.carousel-rider{
+    font-size: 1.5rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+

@@ -5,7 +5,7 @@ import { typography } from "./typography";
 
 // Default Colour Scheme
 
-const currentTheme = defaultTheme
+export const currentTheme = defaultTheme 
 
 // NEED TO REPLACE ANY - KEEPING IT FOR NOW AS IM BUILDING 
 export const themes: Record<string, any> = {

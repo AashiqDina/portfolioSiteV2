@@ -4,16 +4,14 @@ import "./Seperator.css";
 type props = {
   colour: string;
   alpha: number;
-  translateZ?: number;
 };
 
-export default function Seperator({ colour, alpha, translateZ }: props) {
+export default function Separator({ colour, alpha }: props) {
   return (
     <div
-      className="Seperator"
+      className="Separator"
       style={{
         backgroundColor: addAlpha(colour, alpha),
-        transform: `translateZ(${translateZ}px)`,
       }}
     ></div>
   );

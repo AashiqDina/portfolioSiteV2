@@ -1,7 +1,5 @@
 import { useTheme } from "../../context/ThemeContext";
 import HeaderMenuSection, { QuickSectionBox } from "../home/HeaderMenuSection";
-import AppButton from "../ui/AppButton";
-import Seperator from "../ui/Seperator";
 import "./Moon.css";
 
 type props = {

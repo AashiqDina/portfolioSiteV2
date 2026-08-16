@@ -1,30 +1,38 @@
 import { useTheme } from "../../context/ThemeContext";
 import { ProjectData } from "../../types";
+import GitHubIcon from "../../assets/githubIcon.svg?react";
 import Cross from "../icons/Cross";
 import AppButton from "../ui/AppButton";
 import "./ProjectExpanded.css";
+import { Carousel, PillItem } from "../ui/Carousel";
+import Separator from "../ui/Separator";
+import { currentTheme } from "../../styles/theme";
 
 type Props = {
   projectData: ProjectData | null;
   closeCard: () => void;
 };
 
-export default function projectExpanded({ projectData, closeCard }: Props) {
+export default function ProjectExpanded({ projectData, closeCard }: Props) {
   const { theme } = useTheme();
 
   const technologies = projectData?.technologies ?? [];
 
   const MIN_REPEATS = technologies.length <= 5 ? 8 : 2;
-  const repeatedTechnologies = Array.from(
+  const repeatedTechnologies: PillItem[] = Array.from(
     { length: MIN_REPEATS },
-    () => technologies,
+    (_, repeatIndex) =>
+      technologies.map((tech, techIndex) => ({
+        id: `${tech}-${repeatIndex}-${techIndex}`,
+        label: tech,
+      })),
   ).flat();
 
   return (
     <>
       {projectData && <div className="project-backdrop" onClick={closeCard} />}
       <div
-        className={`expanded-card ${projectData ? "visible" : undefined}`}
+        className={`expanded-card ${projectData ? "visible" : ""}`}
         style={{ ...theme.card }}
       >
         <div className="expanded-card-header">
@@ -37,23 +45,41 @@ export default function projectExpanded({ projectData, closeCard }: Props) {
             )}
             <h2 style={{ ...theme.text }}>{projectData?.name}</h2>
           </div>
+
           <AppButton
             className="buttonVariant2"
             onPress={closeCard}
             leftIcon={<Cross />}
           />
         </div>
-        <div className="expanded-card-carousel-container">
-          <div className="expanded-card-tech-container">
-            {repeatedTechnologies.map((tech, index) => (
-              <span
-                key={`${tech}-${index}`}
-                style={{ ...theme.text, ...theme.pill }}
-                className="expanded-card-carousel-rider"
-              >
-                {tech}
-              </span>
-            ))}
+
+        <Carousel items={repeatedTechnologies} />
+
+        <div className="expanded-card-footer">
+          <Separator colour={currentTheme.MainColour} alpha={100} />
+          <div className="expanded-card-footer-links">
+            {projectData?.links.liveDemo && (
+              <div>
+                <img
+                  src={projectData.images.logo}
+                  alt={`${projectData.name} logo`}
+                />
+                <a href={projectData.links.liveDemo} style={{ ...theme.text }}>
+                  Live Demo
+                </a>
+              </div>
+            )}
+            {projectData?.links.github && (
+              <div>
+                <GitHubIcon
+                  style={theme.svgIcons}
+                  className="GitHubLinkedInIcon"
+                />
+                <a href={projectData.links.github} style={{ ...theme.text }}>
+                  GitHub
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

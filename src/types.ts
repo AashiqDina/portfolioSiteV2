@@ -65,6 +65,11 @@ export type HeaderPagesData = {
 
 // --------- Projects --------- 
 
+export type ProjectDataPage = {
+    image: string;
+    descriptions: string;
+}
+
 export type ProjectData = {
     id: string;
     impact: number;
@@ -80,5 +85,5 @@ export type ProjectData = {
         thumbnail: string;
         additional?: string[];
     };
-    descriptions: string[];
+    pages: ProjectDataPage[]
 }   

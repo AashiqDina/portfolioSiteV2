@@ -9,7 +9,7 @@ type props = {
 
 export default function Moon({ menuOpen, closeMenu }: props) {
   const { theme } = useTheme();
-  console.log(theme.moon);
+
   return (
     <>
       {menuOpen && <div className="backdrop" onClick={closeMenu}></div>}

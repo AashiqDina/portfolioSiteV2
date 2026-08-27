@@ -26,9 +26,7 @@
             "logo": "/projects/tradingSim/Logo.svg",
             "thumbnail": "/projects/tradingSim/Thumbnail.png"
         },
-        "descriptions": [
-            "Built a full-stack trading simulation platform with a React and Chart.js dashboard, implementing time-series portfolio tracking with memoised computations and dynamic filtering to support efficient rendering of large datasets."
-        ]
+        "pages": []
     },
     {
         "id": "ImageClassifier-1",
@@ -48,10 +46,7 @@
         "images": {
             "thumbnail": "/projects/imageClassifier/Thumbnail.png"
         },
-        "descriptions": [
-            "Designed and implemented a modular convolutional neural network using parallel convolutional paths with learned feature weighting, batch normalisation, dropout and adaptive pooling, achieving 92.8% training accuracy and 88.5% test accuracy.",
-            "Implemented data augmentation using random flips, colour jitter, rotation and cropping, alongside AdamW optimisation and learning-rate scheduling to improve model generalisation."
-        ]
+        "pages": []
     },
     {
     "id": "Tenzies-1",
@@ -70,10 +65,7 @@
     "images": {
         "thumbnail": "/projects/tenzies/Thumbnail.png"
     },
-    "descriptions": [
-        "Built an interactive dice game where players can selectively hold dice between rolls, with game-state logic determining valid holds and detecting when all dice match.",
-        "Implemented keyboard accessibility using tab navigation and Enter interactions, responsive styling for different screen sizes, and visual feedback for held dice and completed games.",
-        "Added a confetti animation and replay functionality when the player wins, providing immediate visual feedback and allowing the game to be restarted without refreshing the page."
-    ]
+    "pages": []
+
 }
 ]

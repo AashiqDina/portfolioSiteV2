@@ -7,6 +7,7 @@ type Props = {
 };
 
 export default function Stars({ count, colour, styles }: Props) {
+  // memoized - I thought given the potential scale of stars it would be best
   const stars = useMemo(
     () =>
       Array.from({ length: count }).map(() => ({
@@ -19,9 +20,9 @@ export default function Stars({ count, colour, styles }: Props) {
 
   return (
     <>
-      {stars.map((star, i) => (
+      {stars.map((star) => (
         <div
-          key={i}
+          key={`${star.top}-${star.left}-${star.delay}`}
           className="star"
           style={{
             top: `${star.top}%`,

@@ -1,7 +1,7 @@
-import { headerPagesData} from "../types";
+import { HeaderPagesData} from "../types";
 
 // MUST CHANGE THEME TO A TYPE LATER ON, FOR NOW ITS SET TO THIS AS I BUILD UP THEME
-export default function getPagesData(theme: any): headerPagesData[]{
+export default function getPagesData(theme: any): HeaderPagesData[]{
 
     return [
         {

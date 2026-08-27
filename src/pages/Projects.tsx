@@ -9,7 +9,7 @@ import ProjectExpanded from "../components/projects/ProjectExpanded";
 export default function Projects() {
   const [cardExpanded, setCardExpanded] = useState<ProjectData | null>(null);
 
-  const sortedProjects = projects.sort((a, b) => {
+  const sortedProjects = [...projects].sort((a, b) => {
     return b.impact - a.impact;
   });
 

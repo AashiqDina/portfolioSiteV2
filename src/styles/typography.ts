@@ -1,16 +1,16 @@
-import { defaultTheme } from "./defaultThemeColourScheme";
+import { CSSProperties } from "react";
+import { ThemeColourScheme } from "./themeColourScheme";
 
-const theme = defaultTheme
+export function createTypography(theme: ThemeColourScheme) {
+    const text: CSSProperties = {
+        color: theme.MainColour,
+        fontFamily: "Sansation, sans-serif",
+        margin: 0,
+        padding: 0,
+        transition: "all 0.5s ease-in-out",
+    };
 
-const text = {
-    color: theme.MainColour,
-    fontFamily: "Sansation, sans-serif",
-    margin: 0,
-    padding: 0,
-    transition: "all 0.5s ease-in-out"
-
-}
-
-export const typography = {
-    text,
+    return {
+        text,
+    };
 }

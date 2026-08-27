@@ -1,41 +1,51 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { themes } from "../styles/theme";
-
-type ThemeName = keyof typeof themes;
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createTheme, Theme } from "../styles/theme";
+import { ThemeName, themeColourSchemes } from "../styles/themeColourScheme";
 
 type ThemeContextType = {
-  themeName: ThemeName;
-  theme: (typeof themes)[ThemeName];
-  setTheme: (name: ThemeName) => void;
+    themeName: ThemeName;
+    theme: Theme;
+    setTheme: (name: ThemeName) => void;
 };
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [themeName, setThemeName] = useState<ThemeName>(() => {
-    const saved = localStorage.getItem("theme") as ThemeName | null;
-    return saved ?? "default";
-  });
+    const [themeName, setThemeName] = useState<ThemeName>(() => {
+        const saved = localStorage.getItem("theme");
 
-  useEffect(() => {
-    localStorage.setItem("theme", themeName);
-  }, [themeName]);
+        if (saved === "default" || saved === "light" || saved === "dark") {
+            return saved;
+        }
 
-  const value = {
-    themeName,
-    theme: themes[themeName],
-    setTheme: setThemeName,
-  };
+        return "default";
+    });
 
-  return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
-  );
+    useEffect(() => {
+        localStorage.setItem("theme", themeName);
+    }, [themeName]);
+
+    const theme = useMemo(() => {
+        return createTheme(themeColourSchemes[themeName]);
+    }, [themeName]);
+
+    const value = {
+        themeName,
+        theme,
+        setTheme: setThemeName,
+    };
+
+    return (
+        <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    );
 }
 
 export function useTheme() {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
-  return ctx;
+    const ctx = useContext(ThemeContext);
+
+    if (!ctx) {
+        throw new Error("useTheme must be used within ThemeProvider");
+    }
+
+    return ctx;
 }

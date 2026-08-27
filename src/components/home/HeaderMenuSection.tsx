@@ -8,13 +8,9 @@ import Stars from "../background/Stars";
 import { Link } from "react-router-dom";
 
 function formatData(data: HeaderPagesData[]): HeaderPagesData[][] {
-  const formattedData: HeaderPagesData[][] = [];
-
-  for (let i = 0; i < data.length; i += 3) {
-    formattedData.push(data.slice(i, i + 3));
-  }
-
-  return formattedData;
+  return Array.from({ length: Math.ceil(data.length / 3) }, (_, index) =>
+    data.slice(index * 3, index * 3 + 3),
+  );
 }
 
 type props = {
@@ -27,13 +23,9 @@ export default function HeaderMenuSections({
   closeMenu,
 }: props) {
   const { theme } = useTheme();
-  const [data, setData] = useState<HeaderPagesData[][]>([]);
 
-  useEffect(() => {
-    const pagesData = getPagesData(theme);
-    const formattedData = formatData(pagesData);
-    setData(formattedData);
-  }, []);
+  const pagesData: HeaderPagesData[] = getPagesData(theme);
+  const data: HeaderPagesData[][] = formatData(pagesData);
 
   return (
     <div
@@ -79,6 +71,9 @@ type QuickSectionBoxProps = {
   closeMenu?: () => void;
 };
 
+/** was thinking of memoizing this but the added complexity / worse readability
+    isn't worth the tiny gains
+**/
 export function QuickSectionBox({
   data,
   parentIndex,

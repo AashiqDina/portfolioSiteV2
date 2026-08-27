@@ -6,7 +6,8 @@ import AppButton from "../ui/AppButton";
 import "./ProjectExpanded.css";
 import { Carousel, PillItem } from "../ui/Carousel";
 import Separator from "../ui/Separator";
-import { currentTheme } from "../../styles/theme";
+import { useState } from "react";
+import { themeColourSchemes } from "../../styles/themeColourScheme";
 
 type Props = {
   projectData: ProjectData | null;
@@ -15,6 +16,7 @@ type Props = {
 
 export default function ProjectExpanded({ projectData, closeCard }: Props) {
   const { theme } = useTheme();
+  const [page, setPage] = useState<number>(0);
 
   const technologies = projectData?.technologies ?? [];
 
@@ -30,7 +32,10 @@ export default function ProjectExpanded({ projectData, closeCard }: Props) {
 
   return (
     <>
-      {projectData && <div className="project-backdrop" onClick={closeCard} />}
+      <div
+        className={`project-backdrop${projectData ? " open" : ""}`}
+        onClick={closeCard}
+      />
       <div
         className={`expanded-card ${projectData ? "visible" : ""}`}
         style={{ ...theme.card }}
@@ -55,8 +60,10 @@ export default function ProjectExpanded({ projectData, closeCard }: Props) {
 
         <Carousel items={repeatedTechnologies} />
 
+        <div className="expanded-card-body"></div>
+
         <div className="expanded-card-footer">
-          <Separator colour={currentTheme.MainColour} alpha={100} />
+          {/* <Separator colour={"#ffffff"} alpha={100} /> */}
           <div className="expanded-card-footer-links">
             {projectData?.links.liveDemo && (
               <div>
@@ -73,7 +80,7 @@ export default function ProjectExpanded({ projectData, closeCard }: Props) {
               <div>
                 <GitHubIcon
                   style={theme.svgIcons}
-                  className="GitHubLinkedInIcon"
+                  className="project-github-icon"
                 />
                 <a href={projectData.links.github} style={{ ...theme.text }}>
                   GitHub

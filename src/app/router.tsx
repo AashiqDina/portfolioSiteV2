@@ -11,8 +11,11 @@ import Hobbies from "../pages/Hobbies";
 import Settings from "../pages/Settings";
 
 export default function Router() {
-  // const hideHeader = location.pathname === "/";
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <BrowserRouter>
@@ -22,19 +25,10 @@ export default function Router() {
           <Header
             isMenuOpen={menuOpen}
             toggleMenu={() => setMenuOpen((prev) => !prev)}
-            closeMenu={() => setMenuOpen(false)}
+            closeMenu={closeMenu}
           />
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Home
-                  closeMenu={() => {
-                    setMenuOpen(false);
-                  }}
-                />
-              }
-            />
+            <Route path="/" element={<Home closeMenu={closeMenu} />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/education" element={<Education />} />

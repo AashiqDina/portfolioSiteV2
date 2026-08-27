@@ -18,7 +18,7 @@
 
 .expanded-card.visible{
     top: 50%;
-    transition-delay: 1s;
+    transition-delay: 0.1s;
     border-radius: 0rem;
 }
 
@@ -27,16 +27,31 @@
     color: white;
 }
 
-.project-backdrop{
+/* .project-backdrop{
     position: fixed;
     inset: 0;
     z-index: 20;
     animation-name: backdropOpen;
     animation-delay: 0s;
-    animation-duration: 0.8s;
+    animation-duration: 0.5s;
     animation-iteration-count: 1;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+} */
+
+.project-backdrop {
+    background: rgba(0, 0, 0, 0.99);
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.9s ease-in-out;
+}
+
+.project-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .expanded-card-header{
@@ -48,15 +63,15 @@
     padding: 2rem;
 }
 
+.expanded-card-title > img{
+    width: 4rem;
+}
+
 .expanded-card-header > .expanded-card-title{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-}
-
-.expanded-card-header div img{
-    width: 3rem;
 }
 
 .expanded-card-header h2{
@@ -75,7 +90,7 @@
 .expanded-card-footer div {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     flex-direction: row;
 }
 
@@ -84,8 +99,10 @@
     width: 100%;
 }
 
-.expanded-card-footer div img{
-    width: 3rem;
+.expanded-card-footer > div > div > img, .project-github-icon{
+    height: 32px;
+    width: 32px;
+    object-fit: contain
 }
 
 .expanded-card-footer div a{

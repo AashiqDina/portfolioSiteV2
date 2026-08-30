@@ -1,30 +1,30 @@
-.expanded-card{
-    position: fixed;
-    top: -50%;
-    left: 50%;
-    width: 100dvw;
-    height: 100dvh;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    flex-direction: column;
-    transition: top 1s ease-in-out;
-    transition-delay: 0s;
-    z-index: 21;
-    overflow: hidden;
+.expanded-card {
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  width: 100dvw;
+  height: 100dvh;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-direction: column;
+  transition: top 1s ease-in-out;
+  transition-delay: 0s;
+  z-index: 21;
+  overflow: hidden;
 }
 
-.expanded-card.visible{
-    top: 50%;
-    transition-delay: 0.1s;
-    border-radius: 0rem;
+.expanded-card.visible {
+  top: 50%;
+  transition-delay: 0.1s;
+  border-radius: 0rem;
 }
 
-.expanded-card h2{
-    font-size: 10rem;
-    color: white;
+.expanded-card h2 {
+  font-size: 10rem;
+  color: white;
 }
 
 /* .project-backdrop{
@@ -40,71 +40,72 @@
 } */
 
 .project-backdrop {
-    background: rgba(0, 0, 0, 0.99);
-    position: fixed;
-    inset: 0;
-    z-index: 20;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.9s ease-in-out;
+  background: rgba(0, 0, 0, 0.99);
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.9s ease-in-out;
 }
 
 .project-backdrop.open {
-    opacity: 1;
-    pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.expanded-card-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    padding: 2rem;
+.expanded-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  padding: 2rem;
 }
 
-.expanded-card-title > img{
-    width: 4rem;
+.expanded-card-title > img {
+  width: 4rem;
 }
 
-.expanded-card-header > .expanded-card-title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+.expanded-card-header > .expanded-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.expanded-card-header h2{
-    font-size: 3rem;
+.expanded-card-header h2 {
+  font-size: 3rem;
 }
 
-.expanded-card-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    gap: 0.8rem;
+.expanded-card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.8rem;
 }
 
 .expanded-card-footer div {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: row;
 }
 
 .expanded-card-footer > .expanded-card-footer-links {
-    justify-content: space-evenly;
-    width: 100%;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
-.expanded-card-footer > div > div > img, .project-github-icon{
-    height: 32px;
-    width: 32px;
-    object-fit: contain
+.expanded-card-footer > div > div > img,
+.project-github-icon {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
 }
 
-.expanded-card-footer div a{
-    font-size: 1.5rem;
+.expanded-card-footer div a {
+  font-size: 1.5rem;
 }

@@ -8,19 +8,19 @@
 }
 
 @keyframes animatedBorder {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 200% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @keyframes backdropOpen {
   0% {
     background: rgba(0, 0, 0, 0);
   }
-  100%{
+  100% {
     background: rgba(0, 0, 0, 0.99);
     /* backdrop-filter: blur(2px); */
   }
@@ -30,12 +30,12 @@
   0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
-@keyframes scrollLeft  {
+@keyframes scrollLeft {
   from {
     transform: translateX(0);
   }

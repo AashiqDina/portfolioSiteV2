@@ -1,111 +1,112 @@
-.HeaderTitle.Home{
-    width: 100%;
-    text-align: center;
-    white-space: nowrap;
-    font-size: 4rem;
+.HeaderTitle.Home {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 4rem;
 }
 
-.HomeMainContent{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1.5rem;
-    height: 90%;
-    width: 100%;
+.HomeMainContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 90%;
+  width: 100%;
 }
 
 .HomeMainContent .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1.5em;
-    margin-left: 5rem;
-    margin-right: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .HomeMainContent .container > *:not(.OuterMoon) {
-    position: relative;
-    z-index: 5;
+  position: relative;
+  z-index: 5;
 }
 
-
-
-
-
-
-
-.GitHubLinkedInIcon{
-    width: 3rem;
-    height: 3rem;
+.GitHubLinkedInIcon {
+  width: 3rem;
+  height: 3rem;
 }
 
-.HomeButtons{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    margin-top: 2rem;
-    gap: 1.5rem;
-    width: 100%;
-    
+.HomeButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 2rem;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-.ShortAboutMeDescription{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-direction: column;
-    width: 80%;
+.ShortAboutMeDescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+  width: 80%;
 }
 
-.ShortAboutMeDescription p{
-    text-align: center;
-    font-size: 1.3rem;
-    font-weight: 100;
+.ShortAboutMeDescription p {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 100;
 }
 
-.QuickButtons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: 50%;
+.QuickButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 50%;
 }
+
+.view-my-work-button {
+  border: none;
+}
+
+/* ---------- 900px ---------- */
 
 @media (max-width: 900px) {
-    .GitHubLinkedInIcon{
-        width: 2.5rem;
-        height: 2.5rem;
-    }
+  .GitHubLinkedInIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 
-    .HomeButtons{
-        margin-top: 0.5rem;
-    }
+  .HomeButtons {
+    margin-top: 0.5rem;
+  }
 }
 
+/* ---------- 600px ---------- */
+
 @media (max-width: 600px) {
+  .HomeMainContent .container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    gap: 1rem;
+  }
 
-    .HomeMainContent .container {
-        margin-left: 4rem;
-        margin-right: 4rem;
-    }
+  .GitHubLinkedInIcon {
+    width: 2rem;
+    height: 2rem;
+  }
 
-    .GitHubLinkedInIcon{
-        width: 2rem;
-        height: 2rem;
-    }
+  .HomeButtons {
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    column-gap: 0;
+  }
 
-    .HomeButtons{
-        margin-top: 0.5rem;
-        flex-wrap: wrap;
-        column-gap: 0;
-    }
-
-    .ViewMyWork{
-        order: 3;
-    }
+  .ViewMyWork {
+    order: 3;
+  }
 }

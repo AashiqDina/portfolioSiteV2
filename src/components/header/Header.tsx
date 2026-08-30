@@ -33,6 +33,10 @@ export default function Header({ isMenuOpen, toggleMenu, closeMenu }: props) {
         </Link>
       </div>
       <div className={`quickSection ${isMenuOpen ? "open" : ""}`}>
+        <div
+          className={`header-menu-backdrop${isMenuOpen ? " open" : ""}`}
+          onClick={closeMenu}
+        />
         <HeaderMenuSections closeMenu={closeMenu} />
       </div>
     </header>

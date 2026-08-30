@@ -8,6 +8,7 @@ import { Carousel, PillItem } from "../ui/Carousel";
 import Separator from "../ui/Separator";
 import { useState } from "react";
 import { themeColourSchemes } from "../../styles/themeColourScheme";
+import { LeftArrow, RightArrow } from "../icons/Arrows";
 
 type Props = {
   projectData: ProjectData | null;
@@ -15,7 +16,8 @@ type Props = {
 };
 
 export default function ProjectExpanded({ projectData, closeCard }: Props) {
-  const { theme } = useTheme();
+  const { theme, themeName } = useTheme();
+  const colourScheme = themeColourSchemes[themeName];
   const [page, setPage] = useState<number>(0);
 
   const technologies = projectData?.technologies ?? [];
@@ -60,10 +62,13 @@ export default function ProjectExpanded({ projectData, closeCard }: Props) {
 
         <Carousel items={repeatedTechnologies} />
 
-        <div className="expanded-card-body"></div>
+        <div className="expanded-card-body">
+          <LeftArrow />
+          <RightArrow />
+        </div>
 
         <div className="expanded-card-footer">
-          {/* <Separator colour={"#ffffff"} alpha={100} /> */}
+          <Separator colour={colourScheme.MainColour} alpha={100} />
           <div className="expanded-card-footer-links">
             {projectData?.links.liveDemo && (
               <div>

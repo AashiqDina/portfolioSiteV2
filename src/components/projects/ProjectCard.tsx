@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { ProjectData } from "../../types";
 import "./ProjectCard.css";
+import GitHubIcon from "../../assets/githubIcon.svg?react";
+import StarIcon from "../../assets/shiningStar.svg?react";
 import { applyTilt } from "../../utils/applyTilt";
 import AppButton from "../ui/AppButton";
 
@@ -84,8 +86,35 @@ export default function ProjectCard({ data, expandCard }: Props) {
                     window.location.href = url;
                   }
                 }}
+                leftIcon={
+                  <StarIcon
+                    style={theme.svgIcons}
+                    className="project-button-icons-star"
+                  />
+                }
               >
-                Live Demo
+                Demo
+              </AppButton>
+            )}
+            {!data.links.liveDemo && data.links.github && (
+              <AppButton
+                className="project-card-footer-buttons"
+                textClassName="project-card-footer-buttons-text"
+                onPress={() => {
+                  const url = data.links.github;
+
+                  if (url) {
+                    window.location.href = url;
+                  }
+                }}
+                leftIcon={
+                  <GitHubIcon
+                    style={theme.svgIcons}
+                    className="project-button-icons"
+                  />
+                }
+              >
+                GitHub
               </AppButton>
             )}
             <AppButton

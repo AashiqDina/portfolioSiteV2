@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useRef } from "react";
 import { HeaderPagesData } from "../../types";
 import "./HeaderMenuSection.css";
 import { useTheme } from "../../context/ThemeContext";
@@ -85,7 +85,7 @@ export function QuickSectionBox({
   const type = parentIndex % 2 === 0 ? 1 : 2;
   const cardRef = useRef<HTMLDivElement>(null);
 
-  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+  function handlePointerMove(e: React.PointerEvent<HTMLDivElement>) {
     if (!cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();
@@ -108,7 +108,7 @@ export function QuickSectionBox({
         ...theme.headerNavButtons,
       }}
       ref={cardRef}
-      onMouseMove={handleMouseMove}
+      onPointerMove={handlePointerMove}
       onClick={closeMenu ?? undefined}
     >
       <Link to={data.path} className="HeaderMenuBoxContainer">

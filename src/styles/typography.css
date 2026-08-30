@@ -1,33 +1,32 @@
 .header1 {
-    font-size: 8rem;
-    text-align: center;
+  font-size: 8rem;
+  text-align: center;
 }
 
 .header2 {
-    font-size: 5rem;
-    text-align: center;
+  font-size: 5rem;
+  text-align: center;
 }
 
 .header3 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 .header4 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .header5 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .paragraph1 {
-    font-size: 3rem;
-    font-weight: 200;
-    text-align: center;
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
 }
 
 .paragraph2 {
-    
 }
 
 .paragraph3 {
@@ -40,77 +39,76 @@
 }
 
 @media (max-width: 900px) {
-    .header1 {
-        font-size: 6rem;
-    }
+  .header1 {
+    font-size: 6rem;
+  }
 
-    .header2 {
-        font-size: 5rem;
-    }
+  .header2 {
+    font-size: 5rem;
+  }
 
-    .header3 {
-        font-size: 3rem;
-    }
+  .header3 {
+    font-size: 3rem;
+  }
 
-    .header4 {
-        font-size: 2rem;
-    }
+  .header4 {
+    font-size: 2rem;
+  }
 
-    .header5 {
-        font-size: 1rem;
-    }
+  .header5 {
+    font-size: 1rem;
+  }
 
-    .paragraph1 {
-        font-size: 2.5rem;
-        font-weight: 200;
-    }
+  .paragraph1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+  }
 
-    .paragraph2 {
-        
-    }
+  .paragraph2 {
+  }
 
-    .paragraph3 {
-    }
+  .paragraph3 {
+  }
 
-    .paragraph4 {
-    }
+  .paragraph4 {
+  }
 
-    .paragraph5 {
-    }
+  .paragraph5 {
+  }
 }
 
 @media (max-width: 600px) {
-    .header1 {
-        font-size: 3rem;
-    }
+  .header1 {
+    font-size: 3rem;
+  }
 
-    .header2 {
-    }
+  .header2 {
+    font-size: 2.5rem;
+  }
 
-    .header3 {
-    }
+  .header3 {
+  }
 
-    .header4 {
-    }
+  .header4 {
+  }
 
-    .header5 {
-    }
+  .header5 {
+  }
 
-    .paragraph1 {
-        font-size: 1.5rem;
-        font-weight: 200;
-    }
+  .paragraph1 {
+    font-size: 1.5rem;
+    font-weight: 200;
+  }
 
-    .paragraph2 {
-        
-    }
+  .paragraph2 {
+  }
 
-    .paragraph3 {
-    }
+  .paragraph3 {
+  }
 
-    .paragraph4 {
-    }
+  .paragraph4 {
+  }
 
-    .paragraph5 {
-    }
+  .paragraph5 {
+  }
 }

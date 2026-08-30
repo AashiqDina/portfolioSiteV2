@@ -54,36 +54,36 @@
 
 // }
 
-// --------- Header --------- 
+// --------- Header ---------
 
 export type HeaderPagesData = {
-    title: string;
-    description: string;
-    borderHoverColour: string;
-    path: string;
-}
+  title: string;
+  description: string;
+  borderHoverColour: string;
+  path: string;
+};
 
-// --------- Projects --------- 
+// --------- Projects ---------
 
 export type ProjectDataPage = {
-    image: string;
-    descriptions: string;
-}
+  image: string;
+  descriptions: string;
+};
 
 export type ProjectData = {
-    id: string;
-    impact: number;
-    name: string;
-    summary: string;
-    technologies: string[];
-    links: {
-        github?: string;
-        liveDemo?: string;
-    };
-    images: {
-        logo?: string; 
-        thumbnail: string;
-        additional?: string[];
-    };
-    pages: ProjectDataPage[]
-}   
+  id: string;
+  impact: number;
+  name: string;
+  summary: string;
+  technologies: string[];
+  links: {
+    github?: string;
+    liveDemo?: string;
+  };
+  images: {
+    logo?: string;
+    thumbnail: string;
+    additional?: string[];
+  };
+  pages: ProjectDataPage[];
+};
